@@ -9,7 +9,7 @@
                 <div id="footer_line1">
                     <nav id="footer_sub_menu" aria-label="bottom sub menu">
                         <ul>
-                            <li><a href="index.php?action=about" class="botoom_sub_menu">&Agrave PROPOS</a></li>
+                            <li><a href="index.php?action=about" class="botoom_sub_menu">&#192;PROPOS</a></li>
                             <li><a href="https://www.moncompteformation.gouv.fr/espace-public/consulter-mes-droits-formation" class="botoom_sub_menu">MES DROITS FORMATION</a></li>
                             <li><a href="index.php?action=contact" class="botoom_sub_menu">CONTACTEZ NOUS</a></li>
                         </ul>

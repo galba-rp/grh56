@@ -94,9 +94,11 @@ main {
 .none {
     display: none;
 }
-*:focus{
+
+*:focus {
     outline: none;
 }
+
 /*HEADER STYLING*/
 .header_main {
     justify-content: space-between;
@@ -203,7 +205,7 @@ main {
     width: 500px;
     padding: 15px 0;
     position: absolute;
-    top: 60vh;
+    top: 40vh;
     transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
@@ -316,7 +318,7 @@ main {
     height: auto;
 }
 
-.top_article p {
+.top_article h1 {
     font: 2em 'Playfair Display', serif;
     position: absolute;
     top: 35%;
@@ -472,6 +474,7 @@ main {
 
 #comp_base {
     align-items: baseline;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -548,7 +551,7 @@ footer {
 
 .cookie_bar {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     min-height: 160px;
     width: 100%;
     background-color: rgba(216, 220, 246, 0.89);
@@ -582,7 +585,7 @@ footer {
     list-style: none;
     text-decoration: none;
     color: white;
-    font: 1.25em 'Charm', sans-serif;
+    font: 1em 'Charm', sans-serif;
 }
 
 #footer_line1,
@@ -628,7 +631,7 @@ footer {
 
 #footer_line2 {
     align-items: baseline;
-    font: 1.25em 'Charm', sans-serif;
+    font: 1em 'Charm', sans-serif;
     justify-content: space-evenly;
     color: white;
 }
@@ -754,6 +757,10 @@ footer {
 .lesson_comment {
     font: italic 1em 'Open Sans', sans-serif;
     color: grey;
+}
+
+#mw_dictionary {
+    margin-bottom: 150px;
 }
 
 /*ADMIN PAGE */
@@ -946,7 +953,7 @@ footer {
     height: 100%;
 }
 
-.course h2 {
+.course h1 {
     color: white;
     font: 3em 'Charm', sans-serif, bold;
     text-align: center;
@@ -955,11 +962,11 @@ footer {
     background-image: linear-gradient(to right, white, rgb(70, 136, 180), white);
 }
 
-.course h3 {
+.course h2 {
     font: 2em 'Charm', sans-serif, bold;
 }
 
-.course h4 {
+.course h3 {
     font: 1.5em 'Charm', sans-serif, bold;
 }
 
@@ -1013,7 +1020,6 @@ footer {
 #london {
     float: left;
     margin: 50px 20px;
-    flex-shrink: 0;
 }
 
 #sydney {
@@ -1043,7 +1049,7 @@ footer {
     margin-left: 30px;
 }
 
-#story {
+.story {
     text-align: justify;
     text-indent: 50px;
 }

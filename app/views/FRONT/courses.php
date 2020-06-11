@@ -3,12 +3,12 @@ include 'layouts/head.php';
 include_once 'layouts/header.php';
 ?>
 <main>
-    <section class="normal_width fade bottom" id >
+    <section class="normal_width fade bottom">
         <article class="course" id="cp_article1">
-            <h2>ANGLAIS GENRAL</h2>
+            <h1>ANGLAIS GENRAL</h1>
             <div>
                 <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
-                <h3> Objectif de la formation :</h3>
+                <h2> Objectif de la formation :</h2>
                 <p>Être capable de communiquer simplement lors d&#39;échanges professionnels (au
                     téléphone ou en présentiel), de pouvoir communiquer par mail ainsi que de
                     faire face aux situations du quotidien lors de séjours à l&#39;étranger par
@@ -46,13 +46,12 @@ include_once 'layouts/header.php';
             </div>
         </article>
         <article class="course" id="cp_article2">
-            <h2>ANGLAIS PROFESSIONNEL</h2>
+            <h1>ANGLAIS PROFESSIONNEL</h1>
             <div>
                 <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
-                <h3> Objectif de la formation :</h3>
-                <p>Formation élaborée sur mesure en fonction de vos besoins spécifiques. </br> Être
-                    capable d&#39;élargir ses compétences et de se perfectionner selon les objectif s
-                    définis.</p>
+                <h2> Objectif de la formation :</h2>
+                <p>Formation élaborée sur mesure en fonction de vos besoins spécifiques.</p>
+                <p>Être capable d&#39;élargir ses compétences et de se perfectionner selon les objectif définis.</p>
                 <div class="cp_flex">
                     <div class="content">
                         <h3>Contenu de la formation :</h3>
@@ -83,10 +82,10 @@ include_once 'layouts/header.php';
 
         </article>
         <article class="course" id="cp_article3">
-            <h2>ANGLAIS : HOTTELERIE ET RESTAURATION</h2>
+            <h1>ANGLAIS : HOTTELERIE ET RESTAURATION</h1>
             <div>
                 <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
-                <h3> Objectif de la formation :</h3>
+                <h2> Objectif de la formation :</h2>
                 <p>Être capable de communiquer simplement lors d&#39;échanges professionnels (au
                     téléphone ou en présentiel), de pouvoir communiquer par mail ainsi que de
                     faire face aux situations du quotidien lors de séjours à l&#39;étranger par

@@ -100,16 +100,16 @@ class ControllerAdmin
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($_POST);
 
-        if(empty($_POST['lesson'])){
+        if(empty($_POST['update_title'])){
             $errors['lesson'] = "Lesson's title is missing !";
         }
-        if(empty($_POST['comment'])){
+        if(empty($_POST['update_comment'])){
             $errors['comment'] = "Comment is missing !";
         } 
         if (!empty($errors['lesson']) || !empty($errors['comment'])){
             require 'app/views/BACK/lessons.php';
         }else{
-            $lessonUpdate = $this->object->lessonWeekUpdate($lesson, $comment, $id);
+            $lessonUpdate = $this->object->lessonWeekUpdate($update_title, $update_comment, $id);
             
             if ($lessonUpdate){
                 $show = "show";

@@ -112,13 +112,12 @@ class ControllerUser
     }
     // function to update student data
     function accountUpdate(){
-
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        
-        $nameUpdate = $_POST['name'];
-        $surnameUpdate = $_POST['surname'];
-        $emailUpdate = $_POST['email'];
+        $nameUpdate = $_POST['update_name'];
+        $surnameUpdate = $_POST['update_surname'];
+        $emailUpdate = $_POST['update_email'];
         $id =  $_SESSION['user'];
+       
         $errors = $this->errors;
         if(empty($nameUpdate)){
            $errors['name'] = 'Prenom manquant !';
@@ -141,7 +140,6 @@ class ControllerUser
             $errors['email'] = "Email n'est pas conforme !";
             $_SESSION['email'] = '';
         }
-
         if(empty($errors['name']) && empty($errors['surname']) && empty($errors['email'])){
             $userDataUpdate = $this->object->userUpdate($nameUpdate, $surnameUpdate, $emailUpdate, $id); 
             

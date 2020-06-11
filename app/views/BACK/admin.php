@@ -6,10 +6,10 @@ include_once 'app/views/FRONT/layouts/header.php';
     <main>
         <section class="section normal_width admin_section">
             <div class= "normal_width errors">
-                <span class="form_error"><?= $errors['lesson'] ?></span></br>
-                <span class="form_error"><?= $errors['comment'] ?></span></br>
-                <span class="form_error"><?= $errors['video'] ?></span></br>
-                <span class="form_error"><?= $errors['not uploaded'] ?></span></br>
+                <div class="form_error"><?= $errors['lesson'] ?></div>
+                <div class="form_error"><?= $errors['comment'] ?></div>
+                <div class="form_error"><?= $errors['video'] ?></div>
+                <div class="form_error"><?= $errors['not uploaded'] ?></div>
             </div>
             <div class="card_admin" id="card1">
                 <div class="card cadmin">
@@ -32,7 +32,7 @@ include_once 'app/views/FRONT/layouts/header.php';
             <div class="card_admin" id="card2">
                 <div class="card cadmin">
                         <div class="card_front">
-                            <h1 class="title_card">MANAGE </br> "LESSON OF THE WEEK"</h1>
+                                <p class="title_card">MANAGE "LESSON OF THE WEEK"</p>
                         </div>
                         <div class="card_back cadmin_back">
                             <input type="button" class="small_button admin_buttons" id="all_lessons" onclick="location.href='indexAdmin.php?action=allLessons';" value="ALL LESSONS">            

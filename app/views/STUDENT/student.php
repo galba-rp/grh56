@@ -11,11 +11,11 @@ include_once 'app/views/FRONT/layouts/header.php';
             <source src="<?= $lod['lod_file']?>" type="video/mp4">
         </video> 
     </article>
-    <article class = "student_article">
+    <article class = "student_article" id="mw_dictionary">
         <img src="app/public/images/MWlogo.png" alt="Merriam-Webster logo">
         <h1 class="main_title">Merriam-Webster's Learner's Dictionary</h1> 
         <div class="dictionary flexcolumn">
-            <form action="" method="POST">
+            <form action="#" method="POST">
                 <div class="search_area" id="wordSearch">
                     <input type="text" name="word" id="word_search" placeholder="">
                     <button type="button" class="button" id="search">Search</button>

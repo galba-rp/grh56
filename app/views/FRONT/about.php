@@ -9,26 +9,26 @@ include_once 'layouts/header.php';
             <img src="app/public/images/bubble_l.png" alt="word London">
             <img src="app/public/images/bubble_r.png" alt="word London">
         </div>
-        <h3 class="charm_p ">NOS FORMATIONS VOUS AIDERONT A Y PARVENIR !</h3>
-        <article class="flex">
+        <h1 class="charm_p ">NOS FORMATIONS VOUS AIDERONT A Y PARVENIR !</h1>
+        <article>
             <img src="app/public/images/london_s.jpg" alt="word London" id="london">
             <div>
-                <h1 class="charm_p">Qui suis-je ?</h1>
+                <h2 class="charm_p">Qui suis-je ?</h2>
                 <p class="cormorant_p">Formatrice d’anglais expérimentée, j’ai habité 7 ans entre l’Angleterre et l’Australie. Diplômé d’une université anglaise prestigieuse (Imperial College London), j’ai enseigné à de nombreuses personnes dans plusieurs pays et secteurs professionnels différents.</p>
             </div>
         </article>
         <article>
             <img src="app/public/images/tower_bridge.jpg" alt="word London" id="sydney">
         
-                <h1 class="charm_p">Ma petite histoire...</h1>
-                <p class="cormorant_p" id="story">Ayant été fâchée avec l’anglais durant toute ma scolarité, 
+                <h2 class="charm_p">Ma petite histoire...</h2>
+                <p class="cormorant_p story">Ayant été fâchée avec l’anglais durant toute ma scolarité, 
                     il a fallu que je m’expatrie dans le but d’apprivoiser la langue de Shakespeare, 
                     car, malgré neuf années d’apprentissage obligatoire, mis à part le nom des couleurs, 
-                    les chiffres et quelques verbes irréguliers, mon anglais était quasi inexistant ! </br> 
+                    les chiffres et quelques verbes irréguliers, mon anglais était quasi inexistant !
                     Ne croyez pas que le fait d’aller dans un pays anglophone vous donnera un superbe anglais : 
                     j’ai rencontré à Londres nombre de personnes y ayant vécu de longues années et dont l’anglais 
-                    était plus que basique ! </br>
-                    Le risque étant de ne fréquenter que des francophones, qui sont relativement nombreux outre-Manche 
+                    était plus que basique ! </p>
+                <p class="cormorant_p story">Le risque étant de ne fréquenter que des francophones, qui sont relativement nombreux outre-Manche 
                     (ne dit-on pas de Londres qu’elle est la « sixième » ville de France). 
                     Ainsi, j’ai appris sur le tas en combinant travail et apprentissage, avec une méthodologie qui m’était
                     propre et me convenait. Je suis ensuite allée en Australie pour suivre des cours dans une école de langue à Sydney.
@@ -40,7 +40,8 @@ include_once 'layouts/header.php';
                     ( essentiellement à des ingénieurs en informatique mais également à des avocats, des ingénieurs de 
                     polytechnique et des artistes des beaux-arts) pendant sept ans, conjointement à mes activités de traductrice.
                     Je collabore désormais avec la CCI, qui utilise mes services pour la formation professionnelle en langue anglaise.
-                    </br>Lorsque je suis partie au début des années 2000, Internet était très limité et c’était tout de même bien plus 
+                    </p>
+                <p class="cormorant_p story">Lorsque je suis partie au début des années 2000, Internet était très limité et c’était tout de même bien plus 
                     facile pour s’imprégner de l’accent, la prononciation et la culture anglaise d’aller faire un petit séjour 
                     outre-Manche. Mais de nos jours, grâce aux nombreuses ressources en ligne, on peut s’immerger en restant chez soi.
                     Lors de la formation, qui est très ludique et vivante, outre l’enseignement de l’anglais, je vous expliquerai 

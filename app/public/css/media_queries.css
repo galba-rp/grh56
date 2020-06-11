@@ -30,7 +30,7 @@
 @media (max-width: 960px) {
 
 
-    .top_article p {
+    .top_article h1 {
         font-size: 1.5em;
         text-align: center;
     }
@@ -73,7 +73,7 @@
     }
 
     .cp_flex ul li {
-        font-size: 1.em;
+        font-size: 1em;
     }
 }
 

@@ -70,21 +70,19 @@ class ControllerFront {
         }
         if($errors == 0){
             $to = 'galba.rp@gmail.com';
-            $subject  = 'New message from '. $name;
-            $message = '
-            <h1>New3 message from ' . $name .'</h1>
-            <h2>Adresse e-mail: ' . $email .'</h2>
-            <p>'. nl2br($message) . '</p>';
-            $headers = 'From' .$name. ' <' . $email . '>' . "/r/n";
+            $subject  = $contact_subject;
+            $message =  " From: " . $contact_name . " at " . $contact_email . "\n" . nl2br($contact_message); 
+            $headers =  $contact_email . "/r/n";
             $headers .= 'MIME-Version: 1.0' .  "/r/n";
-            $headers .= 'Content-type: text/html; charset=utf-8' .  "/r/n";
+            $headers .= 'Content-type: text/plain; charset=utf-8' .  "/r/n";
+
 
             $sent = mail($to, $subject, $message, $headers);
-            unset($_POST['name']);
-            unset($_POST['surname']);
-            unset($_POST['email']);
-            unset($_POST['subject']);
-            unset($_POST['message']);
+            unset($_POST['contact_name']);
+            unset($_POST['contact_surname']);
+            unset($_POST['contact_email']);
+            unset($_POST['contact_subject']);
+            unset($_POST['contact_message']);
            
             $sendmail = $this->object->saveMail($name, $surname, $email, $subject, $message);
             if ($sendmail == true){
