@@ -48,7 +48,7 @@ include_once 'layouts/header.php';
         <article class="course" id="cp_article2">
             <h1>ANGLAIS PROFESSIONNEL</h1>
             <div>
-                <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
+                <img src="app/public/images/generalE.jpg" alt="Two people having a conversation">
                 <h2> Objectif de la formation :</h2>
                 <p>Formation élaborée sur mesure en fonction de vos besoins spécifiques.</p>
                 <p>Être capable d&#39;élargir ses compétences et de se perfectionner selon les objectif définis.</p>

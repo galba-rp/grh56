@@ -6,9 +6,10 @@ let lastChildIndex = currentPageString.length - 1;
 let lastChild = currentPageString[lastChildIndex];
 let lastChildSplit = lastChild.split("=");
 // getting action word
-let currentPage = lastChildSplit[1];
+let currentPage = lastChildSplit[0];
 
 window.onload = function load() {
+  console.log(currentPage);
   if (currentPage !== 'logout') {
     document.getElementById(currentPage).className += " active";
   } else {

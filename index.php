@@ -13,8 +13,12 @@ try{
     $controllerFront = new \GRH56\Controllers\ControllerFront(); //creating object controllerFront
     $controllerUser = new \GRH56\Controllers\ControllerUser();
     
+ 
+    
+
     if(isset($_GET['action'])){
-       
+        $show = "";
+        $message= "";
         if($_GET['action'] == 'contact'){
             $controllerFront -> contactForm();
         }elseif($_GET['action'] == 'about'){
@@ -39,7 +43,7 @@ try{
             $controllerUser -> checkEmailExists();
         }elseif($_GET['action'] == 'send'){
             $controllerFront -> sendMessage();
-        }elseif($_SERVER['QUERY_STRING'] == 'admin' && isset($_SESSION['name'])){
+        }elseif($_GET['action']== 'admin' && isset($_SESSION['name'])){
             $controllerUser -> admin(); 
         }elseif($_GET['action'] == 'about_cookies'){
             $controllerFront -> aboutCookies(); 

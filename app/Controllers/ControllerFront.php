@@ -16,6 +16,7 @@ class ControllerFront {
             4 => '',
             ];
     }
+    
 
     // home is getting lessons ant testimonials information from the database to display on  the front page.  
     function home() {
@@ -85,9 +86,12 @@ class ControllerFront {
             unset($_POST['contact_message']);
            
             $sendmail = $this->object->saveMail($name, $surname, $email, $subject, $message);
+            // --- to change to if ($sent == true) on server--
             if ($sendmail == true){
                 $_POST = [];
-                header('Location: index.php?action=home');
+                $show = "show";
+                $message = "Merci, votre message à été envoyé  !";
+                require 'app/views/FRONT/contact.php';;
             }
             else{
                 require 'app/views/FRONT/error.php';

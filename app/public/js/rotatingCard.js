@@ -1,3 +1,4 @@
+//adding delay to transition for back sides on mouseleave event.
 $(document).ready(function () {
     $("#card1").mouseenter(function () {
         $(".card", this).css("transform", "rotateY(180deg)");
@@ -37,6 +38,16 @@ $(document).ready(function () {
     });
 
     $("#cardW2").mouseleave(function () {
+        $(".card", this).css("transform", "rotateY(0deg)");
+        $(".card", this).css("transition-delay", "0.8s");
+    });
+    $(".cadmin_back").mouseenter(function () {
+        $(".card", this).css("transform", "rotateY(180deg)");
+        $(".card", this).css("transition", "transform 1.2s");
+
+    });
+
+    $(".cadmin_back").mouseleave(function () {
         $(".card", this).css("transform", "rotateY(0deg)");
         $(".card", this).css("transition-delay", "0.8s");
     });

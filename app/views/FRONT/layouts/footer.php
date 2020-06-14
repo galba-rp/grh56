@@ -9,31 +9,31 @@
                 <div id="footer_line1">
                     <nav id="footer_sub_menu" aria-label="bottom sub menu">
                         <ul>
-                            <li><a href="index.php?action=about" class="botoom_sub_menu">&#192;PROPOS</a></li>
-                            <li><a href="https://www.moncompteformation.gouv.fr/espace-public/consulter-mes-droits-formation" class="botoom_sub_menu">MES DROITS FORMATION</a></li>
-                            <li><a href="index.php?action=contact" class="botoom_sub_menu">CONTACTEZ NOUS</a></li>
+                            <li><a href="index.php?action=about"  title="Ma petite histoire..." class="botoom_sub_menu">&#192;PROPOS</a></li>
+                            <li><a href="https://www.moncompteformation.gouv.fr/espace-public/consulter-mes-droits-formation"   title="Consulter vos droits formation" class="botoom_sub_menu">MES DROITS FORMATION</a></li>
+                            <li><a href="index.php?action=contact" title="Si vous avez des questions, n'hésitez pas à nous contacter" class="botoom_sub_menu">CONTACTEZ NOUS</a></li>
                         </ul>
                     </nav>
                     <div id="icon_footer">
-                        <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/"><img src="app/public/images/cpf_small.png" alt="Moncomptformation  logo"></a>
-                        <a href="index.php?action=home"><img id="logo_footer" src="app/public/images/logo_small_white.png" alt="GRH formation logo"></a>
-                        <a href="www.datadock.fr"><img src="app/public/images/datadock.jpg" alt="Datadock logo"></a>
+                        <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/" title="Consulter vos droits formation"><img src="app/public/images/cpf_small.png" alt="Mon compt formation logo"></a>
+                        <a href="index.php?action=home" title="Retour à l'accueil">><img id="logo_footer" src="app/public/images/logo_small_white.png" alt="GRH formation logo"></a>
+                        <a href="www.datadock.fr" title="Plus d'information"><img src="app/public/images/datadock.jpg" alt="Datadock logo"></a>
                     </div>
                     <div class="social_net flexcolumn" id="social">
                         <p>SUIVEZ-NOUS SUR:</p>
                         <div id="social_net">
-                            <a href="www.twitter.com" class="icon"><img src="app/public/images/icon-1.jpg"
+                            <a href="https://www.twitter.com" title="Suivez nous sur twitter" class="icon"><img src="app/public/images/icon-1.jpg"
                                     alt="Twitter icon"></a>
-                            <a href="www.facebook.com" class="icon"><img src="app/public/images/icon-2.jpg"
+                            <a href="https://www.facebook.com" class="icon" title="Suivez nous sur facebook"><img src="app/public/images/icon-2.jpg"
                                     alt="Facebook icon"></a>
-                            <a href="www.linkedin.com" class="icon"><img src="app/public/images/icon-3.jpg"
+                            <a href="https://www.linkedin.com" class="icon" title="Suivez nous sur linkedin"><img src="app/public/images/icon-3.jpg"
                                     alt="Linkedin icon"></a>
                         </div>
                     </div>
                 </div>
                 <div id="footer_line2">
                     <p>© <?php echo date('Y')?> BLABLA DESIGN</p>
-                    <p>Images designed by <a href="https://www.freepik.com">freepik.com</a></p>
+                    <p>Images designed by <a href="https://www.freepik.com" title="Les images gratuite">freepik.com</a></p>
                     <a href="index.php?action=about_cookies">POLITIQUE DE COOKIES</a>
                 </div>
             </div>
@@ -58,6 +58,7 @@
          <script src="app/public/js/cookies.js"></script> 
          <script src="app/public/js/checkcookies.js"></script> 
          <script src="app/public/js/success.js"></script> 
+         <script src="app/public/js/uploadFile.js"></script>
 
     </body>
 

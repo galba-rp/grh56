@@ -9,15 +9,15 @@
         margin-right: 1.5em;
     }
 
-    /*ACCOUNT SECTION*/
-    #account_section button {
-        font-size: 2.2vw;
-    }
-
     /*FRONT PAGE*/
     .separator_page {
         width: 100%;
         padding: 20px 0;
+    }
+
+    /*ACCOUNT SECTION*/
+    #account_section button {
+        font-size: 2.2vw;
     }
 
     /* ADMIN PAGE*/
@@ -80,6 +80,8 @@
 
 
 @media (max-width: 720px) {
+
+    /*HEADER*/
     .normal_width {
         margin-bottom: 50px;
     }
@@ -117,6 +119,11 @@
         margin-top: 0;
         align-items: center;
         padding: 0;
+    }
+
+    .modal_box {
+        width: 90%;
+        top: 10%;
     }
 
     /*MAIN SECTION*/
@@ -170,6 +177,48 @@
         margin-top: 10px;
     }
 
+    /* ABOUT PAGE*/
+
+    #about_buuble {
+        width: 90%;
+        height: auto;
+    }
+
+    #about img {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin: 0 0;
+    }
+
+    #about .charm_p {
+        font: 1.9em 'Charm', sans-serif, bold;
+    }
+
+    #about .cormorant_p {
+        font: 1.5em 'Cormorant', serif
+    }
+
+    /*CONTACT PAGE*/
+    #contact_section {
+        margin: 50px 20px 200px;
+        padding: 10px
+    }
+
+    #radio_btns,
+    #contact_form label {
+        font: 0.8em 'Open sans', sans-serif;
+    }
+
+    /* COURSES PAGE*/
+    .course img {
+        display: none;
+    }
+
+    .cp_flex {
+        flex-direction: column;
+    }
+
     /*ACCOUNT SECTION*/
     #account_section {
         flex-direction: column;
@@ -199,25 +248,4 @@
         font-size: 1em;
         margin: 50px 20px;
     }
-
-    /*CONTACT PAGE*/
-    #contact_section {
-        margin: 50px 20px 200px;
-        padding: 10px
-    }
-
-    #radio_btns,
-    #contact_form label {
-        font: 0.8em 'Open sans', sans-serif;
-    }
-
-    /* COURSES PAGE*/
-    .course img {
-        display: none;
-    }
-
-    .cp_flex {
-        flex-direction: column;
-    }
-
 }

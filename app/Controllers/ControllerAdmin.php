@@ -88,6 +88,8 @@ class ControllerAdmin
 
     // allLessons gets all "lesson of the week" from db
     function allLessons(){
+        $show =" ";
+        $message = " ";
         $errors = $this->errors;
         $allLessons = $this->object->allLessons();
         require 'app/views/BACK/lessons.php';
@@ -114,7 +116,7 @@ class ControllerAdmin
             if ($lessonUpdate){
                 $show = "show";
                 $message = "Lesson has beeen updated!";
-                header('Location: indexAdmin.php?action=allLessons');
+                header('Location: allLessons');
            }else{
                 throw new \Exception("updateWeekLesson failed");
            }
@@ -132,7 +134,7 @@ class ControllerAdmin
             unlink($lessonDelete);
             $show = "show";
             $message = "Lesson has been deleted!";
-            header('Location: indexAdmin.php?action=allLessons');
+            header('Location: allLessons');
         }else{
             throw new \Exception("deletWeekLesson failed");
         }

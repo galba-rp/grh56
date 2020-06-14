@@ -24,10 +24,6 @@ body {
     margin: 0;
 }
 
-.active {
-    color: #8A0202 !important;
-}
-
 .section,
 .header_main,
 #top_menu,
@@ -129,7 +125,7 @@ main {
     margin-right: 2.5em;
 }
 
-.main_menu_link a {
+.menu_item {
     font: 1.3em 'Charm', sans-serif, bold;
     text-decoration: none;
     color: #01385C;
@@ -141,8 +137,8 @@ main {
     -o-transition: font-size .4s;
 }
 
-#top_menu ul li a:hover {
-    font-size: 1.6em !important;
+.menu_item:hover {
+    font-size: 1.6em;
 }
 
 #top_separator {
@@ -195,6 +191,10 @@ main {
 }
 
 /*MODAL BOX*/
+.fa {
+    font-size: 24px;
+}
+
 .modal_box {
     background-color: rgb(255, 255, 255);
     border: 0.5px solid #01385C;
@@ -303,6 +303,8 @@ main {
     font: 1.35em'Playfair Display', serif;
     color: #01385C;
 }
+
+/* ---HOME PAGE--- */
 
 /*MAIN SECTION*/
 .top_article {
@@ -454,7 +456,7 @@ main {
 }
 
 
-/* ARTICLE 2*/
+/* ARTICLE 2 */
 
 .why_english {
     padding: 0 30px;
@@ -609,8 +611,8 @@ footer {
     flex-grow: 0;
 }
 
-#logo_footer {
-    margin-left: 3em !important;
+#icon_footer a:nth-child(3) img {
+    margin-left: 0;
 }
 
 .social_net p {
@@ -641,8 +643,314 @@ footer {
     color: white;
 }
 
+/* COOKIES */
 
-/* STUDENT PAGE*/
+.policy {
+    max-width: 1000px;
+    margin: 150px auto;
+}
+
+.policy {
+    font: 1em 'Open Sans', sans-serif;
+}
+
+/*ABOUT PAGE*/
+#about_bubble {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#about article {
+    margin: 20px 30px;
+    padding: 20px 0;
+}
+
+#london {
+    float: left;
+    margin: 50px 20px;
+}
+
+#tower_bridge {
+    float: right;
+    margin: 50px 50px;
+}
+
+#first_h1 {
+    margin-top: 100px;
+}
+
+.cormorant_p {
+    color: rgb(70, 136, 180);
+    font: 1.9em 'Cormorant', serif;
+    text-align: center;
+}
+
+.charm_p {
+    color: #01385C;
+    font: 2.5em 'Charm', sans-serif, bold;
+    text-align: center;
+}
+
+.flex div p {
+    text-align: justify;
+    text-indent: 50px;
+    margin-left: 30px;
+}
+
+.story {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+#about_contact {
+    text-decoration: none;
+}
+
+#about_contact:hover {
+    color: red;
+}
+
+.uni_link {
+    text-decoration: none;
+    color: #01385C;
+}
+
+.uni_link:hover {
+    color: red;
+}
+
+/* COURSES PAGE*/
+.course {
+    color: #01385C;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+}
+
+.course h1 {
+    color: white;
+    font: 3em 'Charm', sans-serif, bold;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 0;
+    background-image: linear-gradient(to right, white, rgb(70, 136, 180), white);
+}
+
+.course h2 {
+    font: 2em 'Charm', sans-serif, bold;
+}
+
+.course h3 {
+    font: 1.5em 'Charm', sans-serif, bold;
+}
+
+.course p {
+    font: 1.35em 'Cormorant', serif;
+}
+
+.course img {
+    float: left;
+    margin: 0 50px 10px;
+}
+
+#cp_article2 h3:first-of-type {
+    margin-top: 1.5em;
+}
+
+#cp_article2 img {
+    float: right;
+}
+
+
+.cp_flex {
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cp_flex .content {
+    flex-grow: 6;
+}
+
+.cp_flex .points {
+    flex-grow: 4;
+    flex-shrink: 0;
+}
+
+.cp_flex ul li {
+    font: 1.2em 'Cormorant', serif;
+}
+
+/* ---CONTACT PAGE--- */
+
+#contact_section {
+    border-radius: 35px;
+    border: 3px solid rgba(1, 56, 92, 0.562);
+    margin: 100px auto 200px;
+    padding: 50px 60px;
+    box-shadow: 5px 5px 15px rgba(1, 56, 92, 0.562);
+    max-width: 600px;
+}
+
+#radio_btns,
+#contact_form label {
+    font: 1.2em 'Open sans', sans-serif;
+    justify-content: space-between;
+    padding-right: 60%;
+    padding-left: 10px;
+}
+
+#radio_btns {
+    padding-top: 0.35em;
+}
+
+#first_line {
+    padding-top: 1.5em;
+}
+
+#contact_message {
+    height: 200px;
+}
+
+/* ---ADMIN PAGE--- */
+
+.flex_row {
+    justify-content: space-between;
+}
+
+.small_button {
+    font: 1.25em 'Open Sans';
+}
+
+.newLesson {
+    margin: 8px 0;
+    line-height: 2.5em;
+}
+
+.admin_buttons {
+    background-color: rgb(70, 136, 180);
+    border-radius: 15px;
+    border: 1px solid white;
+    color: white;
+    height: 2em;
+    margin-top: 5px;
+}
+
+.delete_btn {
+    background-color: #8A0202;
+    border-radius: 15px;
+    border: 1px solid white;
+    color: white;
+    height: 2em;
+    margin-top: 5px;
+}
+
+#all_lessons {
+    margin-top: 25%;
+}
+
+#browseFile {
+    justify-content: left;
+}
+
+#myfile {
+    padding: 12px 0 0 25px;
+    font: 1em 'Open Sans';
+    margin-top: 5px;
+    height: 2em;
+    width: 155px
+}
+
+#myfile:hover,
+.small_button:hover {
+    background-color: #01385C;
+    cursor: pointer;
+}
+
+#showName {
+    font-size: 0.75em;
+    width: 250px;
+    height: auto;
+    margin-top: 5px;
+    color: red;
+}
+
+#publish_button {
+    margin-top: 80px;
+}
+
+.cadmin {
+    border-radius: 35px;
+    background-color: #7a93a1;
+}
+
+.cadmin_back {
+    border-radius: 35px;
+    background-color: #dee7ec;
+    border: 2px solid #01385C;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cadmin_back form {
+    padding: 30px 20px;
+}
+
+.title_card {
+    font-size: 2em;
+    padding-top: 15%;
+}
+
+.errors {
+    width: 100%;
+}
+
+.card_admin {
+    position: relative;
+    height: 400px;
+    width: 450px;
+    margin: 3em 50px;
+    perspective: 500px;
+    flex-grow: 1;
+}
+
+
+.admin_section {
+    background-color: #dee7ec;
+    border: 2px solid #01385C;
+    border-radius: 25px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    margin-top: 120px;
+    margin-bottom: 80px;
+}
+
+/* ---ADMIN LESSONS PAGE--- */
+
+.week_card {
+    background-color: #dee7ec;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 500px;
+    margin: 50px 20px;
+    padding: 0 20px;
+    width: 350px;
+}
+
+.video_lesson {
+    margin: 10px auto 10px auto;
+}
+
+.lessons_crud_btn {
+    font-size: 1.1em;
+    width: 150px;
+}
+
+.lesson_section {
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+/* ---STUDENT PAGE--- */
 #word_search {
     width: 250px;
     font-size: 1.5em;
@@ -763,174 +1071,6 @@ footer {
     margin-bottom: 150px;
 }
 
-/*ADMIN PAGE */
-
-.flex_row {
-    justify-content: space-between;
-}
-
-.small_button {
-    font: 1.25em 'Open Sans';
-}
-
-.newLesson {
-    margin: 8px 0;
-    line-height: 2.5em;
-}
-
-.admin_buttons {
-    background-color: rgb(70, 136, 180);
-    border-radius: 15px;
-    border: 1px solid white;
-    color: white;
-    height: 2em;
-    margin-top: 5px;
-}
-
-.delete_btn {
-    background-color: #8A0202;
-    border-radius: 15px;
-    border: 1px solid white;
-    color: white;
-    height: 2em;
-    margin-top: 5px;
-}
-
-#all_lessons {
-    margin-top: 25%;
-}
-
-#myfile {
-    padding: 12px 0 0 25px;
-    font: 1em 'Open Sans';
-    margin-top: 5px;
-    height: 2em;
-    width: 155px
-}
-
-#myfile:hover,
-.small_button:hover {
-    background-color: #01385C;
-    cursor: pointer;
-}
-
-#publish_button {
-    margin-top: 80px;
-}
-
-.cadmin {
-    border-radius: 35px;
-    background-color: #7a93a1;
-}
-
-.cadmin_back {
-    border-radius: 35px;
-    background-color: #dee7ec;
-    border: 2px solid #01385C;
-    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cadmin_back form {
-    padding: 30px 20px;
-}
-
-.title_card {
-    font-size: 2em;
-    padding-top: 15%;
-}
-
-.errors {
-    width: 100%;
-}
-
-.card_admin {
-    position: relative;
-    height: 400px;
-    width: 450px;
-    margin: 3em 50px;
-    perspective: 500px;
-    flex-grow: 1;
-}
-
-
-.admin_section {
-    background-color: #dee7ec;
-    border: 2px solid #01385C;
-    border-radius: 25px;
-    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
-    flex-wrap: wrap;
-    margin-top: 120px;
-    margin-bottom: 80px;
-}
-
-/* ADMIN LESSONS PAGE */
-
-.week_card {
-    background-color: #dee7ec;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: 500px;
-    margin: 50px 20px;
-    padding: 0 20px;
-    width: 350px;
-}
-
-.video_lesson {
-    margin: 10px auto 10px auto;
-}
-
-.lessons_crud_btn {
-    font-size: 1.1em;
-    width: 150px;
-}
-
-.lesson_section {
-    flex-wrap: wrap;
-    margin-bottom: 80px;
-}
-
-/* CONTACT PAGE*/
-
-#contact_section {
-    border-radius: 35px;
-    border: 3px solid rgba(1, 56, 92, 0.562);
-    margin: 100px auto 200px;
-    padding: 50px 60px;
-    box-shadow: 5px 5px 15px rgba(1, 56, 92, 0.562);
-    max-width: 600px;
-}
-
-#radio_btns,
-#contact_form label {
-    font: 1.2em 'Open sans', sans-serif;
-    justify-content: space-between;
-    padding-right: 60%;
-    padding-left: 10px;
-}
-
-#radio_btns {
-    padding-top: 0.35em;
-}
-
-#first_line {
-    padding-top: 1.5em;
-}
-
-#contact_message {
-    height: 200px;
-}
-
-/* COOKIES */
-
-.policy {
-    max-width: 1000px;
-    margin: 150px auto;
-}
-
-.policy {
-    font: 1em 'Open Sans', sans-serif;
-}
-
 /*ERROR PAGE*/
 .error {
     height: auto;
@@ -945,119 +1085,7 @@ footer {
     font: 1.25em 'Open Sans', sans-serif;
 }
 
-/* COURSES PAGE*/
-.course {
-    color: #01385C;
-    margin: 0 auto;
-    width: 95%;
-    height: 100%;
-}
-
-.course h1 {
-    color: white;
-    font: 3em 'Charm', sans-serif, bold;
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 0;
-    background-image: linear-gradient(to right, white, rgb(70, 136, 180), white);
-}
-
-.course h2 {
-    font: 2em 'Charm', sans-serif, bold;
-}
-
-.course h3 {
-    font: 1.5em 'Charm', sans-serif, bold;
-}
-
-.course p {
-    font: 1.35em 'Cormorant', serif;
-}
-
-.course img {
-    float: left;
-    margin: 0 50px 10px;
-}
-
-#cp_article2 h3:first-of-type {
-    margin-top: 1.5em;
-}
-
-#cp_article2 img {
-    float: right;
-}
-
-
-.cp_flex {
-    justify-content: space-around;
-    width: 100%;
-}
-
-.cp_flex .content {
-    flex-grow: 6;
-}
-
-.cp_flex .points {
-    flex-grow: 4;
-    flex-shrink: 0;
-}
-
-.cp_flex ul li {
-    font: 1.2em 'Cormorant', serif;
-}
-
-/*ABOUT PAGE*/
-#about_bubble {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-
-#about article {
-    margin: 0 30px;
-}
-
-#london {
-    float: left;
-    margin: 50px 20px;
-}
-
-#sydney {
-    float: right;
-    margin: 50px 50px;
-}
-
-#first_h1 {
-    margin-top: 100px;
-}
-
-.cormorant_p {
-    color: rgb(70, 136, 180);
-    font: 1.9em 'Cormorant', serif;
-    text-align: center;
-}
-
-.charm_p {
-    color: #01385C;
-    font: 2.5em 'Charm', sans-serif, bold;
-    text-align: center;
-}
-
-.flex div p {
-    text-align: justify;
-    text-indent: 50px;
-    margin-left: 30px;
-}
-
-.story {
-    text-align: justify;
-    text-indent: 50px;
-}
-
-#about_contact {
-    text-decoration: none;
-}
-
-#about_contact:hover {
-    color: red;
+/* GENERAL CSS */
+.active {
+    color: #8A0202;
 }

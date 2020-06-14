@@ -13,9 +13,9 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if (response === "user") {
-                    window.location.href = 'index.php?action=student';
+                    window.location.href = 'student';
                 } else if (response === "admin") {
-                    window.location.href = 'index.php?admin';
+                    window.location.href = 'admin';
                 } else {
                     $("#wrongEmailPass").html(response);
 

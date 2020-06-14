@@ -1,0 +1,5 @@
+#check if server mod_rewrite.c module installed. 
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z]+)$ index.php?action=$1 [L]

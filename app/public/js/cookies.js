@@ -1,8 +1,10 @@
 document.getElementById("accept").addEventListener("click", setCookie);
 document.getElementById("cookies_more").addEventListener("click", aboutCookies);
-
+//setCookie sets cookie grh56 to expire in one year if accepted
 function setCookie() {
-    document.cookie = 'grh56=yes; path=/';
+    var expires = new Date;
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = 'grh56=yes; path=/; SameSite=lax' + expires.toUTCString() + ';';
     document.getElementById("cookie_bar").classList.add("none");
 }
 
@@ -11,5 +13,5 @@ function read() {
 }
 
 function aboutCookies() {
-    window.location.href = "index.php?action=about_cookies";
+    window.location.href = "cookies";
 }

@@ -1,6 +1,6 @@
 <header>
     <div class="header_main" id="header">
-        <a href="index.php?action=home"><img class="logo fade_in" src="app/public/images/logo_s.png" alt="GRH formation logo"></a>
+        <a href="home" title="Retour à l'accueil"><img class="logo fade_in" src="app/public/images/logo_s.png" alt="GRH formation logo"></a>
         <div role="button" id='burger_button' onclick="hamburgerBtn()"> 
             <div>MENU</div>
             <div id='burger_icon'>
@@ -42,37 +42,35 @@
 
                 endif;
                     ?>
-                <li class="<?php echo($show1)?>"><a href="index.php?action=home"  >ACCUEIL</a></li>
-                <li class="<?php echo($show1)?>"><a href="index.php?action=about">&#192;PROPOS</a></li>
-                <li class="<?php echo($show1)?>"><a href="index.php?action=courses" >LES COURS</a></li>
-                <li class="<?php echo($show1)?>"><a href="index.php?action=contact">CONTACT</a></li>
-                <li class="<?php echo($show5)?>"><a href="index.php?action=student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
-                <li class="<?php echo($show6)?>"><a href="index.php?action=account">MON COMPTE</a></li>
-                <li class="<?php echo($show3)?>" ><a href="index.php?action=logout">SE DECONNECTER</a></li>
-                <li class="<?php echo($show2)?>"><a  id="connect">SE CONNECTER</a></li>
-                
-                
+                <li class="<?php echo($show1)?>"><a href="home" class="menu_item" id="home">ACCUEIL</a></li>
+                <li class="<?php echo($show1)?>"><a href="about" class="menu_item" id="about">&#192;PROPOS</a></li>
+                <li class="<?php echo($show1)?>"><a href="courses" class="menu_item" id="courses">LES COURS</a></li>
+                <li class="<?php echo($show1)?>"><a href="contact" class="menu_item" id="contact">CONTACT</a></li>
+                <li class="<?php echo($show5)?>"><a href="student" class="menu_item" id="student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
+                <li class="<?php echo($show6)?>"><a href="account" class="menu_item" id="acount">MON COMPTE</a></li>
+                <li class="<?php echo($show3)?>" ><a href="logout" class="menu_item" id="logout">SE DECONNECTER</a></li>
+                <li class="<?php echo($show2)?>"><a class="menu_item" id="connect">SE CONNECTER</a></li>
             </ul>
         </nav>
     </div>
     <div class="fade_in" id="top_separator"></div>
     <div id="modal_box" class="modal_box">
-        <i class="fa fa-remove" style="font-size:24px"></i>
+        <i class="fa fa-remove"></i>
         <div id="login_title">SE CONNECTER</div>
-        <form class="flexcolumn" id="login_form" action="index.php?action=login" method="post">
+        <form class="flexcolumn" id="login_form" action="login" method="post">
             <input type="text" name='email' class="log_in_field" id="log_in_email" placeholder="Votre adresse mail...">
             <span  class="form_error" id="emailRequired"></span>
             <input type="password" class="log_in_field"   name="password" id="log_in_password" placeholder="Mot de passe...">
             <span class="form_error" id="passwordRequired"></span>
             <span class="form_error" id="wrongEmailPass"></span>
-            <a href="#" class="modal_links">Mot de passe oublié ?</a>
+            <a href="#" class="modal_links" title="Cliquez ici pour réinitialiser votre mot de passe">Mot de passe oublié ?</a>
             <button type="button" class="button"  id="login_button">Se connecter</button>
             <p>Nouvel apprenant ?</p>
-            <a href="#" class="modal_links" id="create_account">Créer un compte</a>
+            <a href="#" class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>
         </form>
     </div>
     <div id="signin_box" class="modal_box">
-        <i class="fa fa-remove" style="font-size:24px"></i>
+        <i class="fa fa-remove"></i>
         <div id="signin_title"></div>
         <form class="flexcolumn"  id="signup_form"  method="post">
             <label for="sign_up_name">PRENOM :</label>

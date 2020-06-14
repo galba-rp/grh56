@@ -28,7 +28,8 @@ class ControllerUser
     // functin to redirect to the homepage through controllerFront to load lessons from the database
     public function mainPage(){
         $controllerFront = new \GRH56\Controllers\ControllerFront();
-        $controllerFront -> home();
+        header('Location: home');
+        
     }
     
     // checking if  email exists in the database
@@ -105,7 +106,7 @@ class ControllerUser
         $errors = $this->errors;
         $errorsPass =$this->errorsPass;
         if(isset($_SESSION['name'])){
-            require 'app/views/STUDENT/studentaccount.php';
+            require 'app/views/STUDENT/account.php';
         }else{
             $this->mainPage();
         }

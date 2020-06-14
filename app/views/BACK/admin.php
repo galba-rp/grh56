@@ -21,8 +21,9 @@ include_once 'app/views/FRONT/layouts/header.php';
                             <input type="text" class="newLesson"  id ="lesson_week1" name="title"  placeholder="lesson title" value="<?php if(isset($_POST['title'])) echo$_POST['title'] ?>">
                             <input type="text" class="newLesson" id ="lesson_week2" name="comment" placeholder="lesson comment" value="<?php if(isset($_POST['description'])) echo$_POST['description'] ?>">
                             <span  class="form_error" id="bothRequired"></span>
-                            <div class="flex_row">
+                            <div class="flex_row" id="browseFile">
                                 <input type="file" id="myfile" class="admin_buttons" name="myfile">
+                                <span id="showName" class="none"></span>
                             </div>
                             <input type="submit" class="small_button admin_buttons"  id= "publish_button" value="Publish !">
                         </form>             
