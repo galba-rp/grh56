@@ -34,7 +34,7 @@
                 <div id="footer_line2">
                     <p>© <?php echo date('Y')?> BLABLA DESIGN</p>
                     <p>Images designed by <a href="https://www.freepik.com" title="Les images gratuite">freepik.com</a></p>
-                    <a href="index.php?action=about_cookies">POLITIQUE DE COOKIES</a>
+                    <a href="cookies">POLITIQUE DE COOKIES</a>
                 </div>
             </div>
         </footer>
@@ -49,7 +49,7 @@
         <script src="app/public/js/userSignUp.js"></script>
         <script src="app/public/js/signUpValid.js"></script>
         <script src="app/public/js/login.js"></script>
-        <script src="app/public/js/urbanApi.js"></script>        
+        <script src="app/public/js/api.js"></script>        
         <script src="app/public/js/userRegistrationCheck.js"></script>
         <script src="app/public/js/testimonial.js"></script>
          <script src="app/public/js/plugin.js"></script>

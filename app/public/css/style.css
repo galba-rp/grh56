@@ -377,6 +377,7 @@ main {
     width: 350px;
     margin: 3em 10px;
     perspective: 500px;
+    -webkit-perspective: 500px;
 }
 
 .card {
@@ -389,12 +390,16 @@ main {
     border-radius: 5px;
     padding-bottom: 20px;
     transition: transform 1s;
+    -webkit-transition: -webkit-transform 1;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 .lesson:hover .card {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
     transition: transform 1.2s;
+    -webkit-transition: -webkit-transform 1.2s;
 }
 
 .card_front,
@@ -405,6 +410,7 @@ main {
     text-align: center;
     border-radius: 5px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     padding-top: 20px;
 
 }
@@ -422,6 +428,7 @@ main {
     text-align-last: center;
     text-indent: 15px;
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .card_back a {
@@ -910,6 +917,7 @@ footer {
     width: 450px;
     margin: 3em 50px;
     perspective: 500px;
+    -webkit-perspective: 500px;
     flex-grow: 1;
 }
 

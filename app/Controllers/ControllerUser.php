@@ -1,14 +1,14 @@
 <?php
 
 namespace GRH56\Controllers;
-// creating user class with registration signin functions
+
 class ControllerUser
 {  
     private $object;
     public $errors;
     public $errorsPass;
 
-    // connecting to the model and creating arrays for errors display
+    // connecting to the model and creating arrays for errors display.
     function __construct(){
         $this->object = new \GRH56\Models\UserManager();
         $this->errors = [
@@ -25,14 +25,14 @@ class ControllerUser
         require 'app/views/FRONT/error.php';
     }
 
-    // functin to redirect to the homepage through controllerFront to load lessons from the database
+    // mainPage redirects to the homepage through controllerFront to load lessons from the database
     public function mainPage(){
         $controllerFront = new \GRH56\Controllers\ControllerFront();
         header('Location: home');
         
     }
     
-    // checking if  email exists in the database
+    // userRegistrationCheck checking if email exists in the database
      function userRegistrationCheck(){
         // filter removes tags/special characters from array    
        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -95,13 +95,15 @@ class ControllerUser
         }
     }
     
-    // on logout destroying session
+    //logOut destroying session on logout.
     function logOut(){
         unset($_SESSION['user']);
         unset($_SESSION['name']);
         session_destroy();
         $this->mainPage();
     }
+
+
     function account(){
         $errors = $this->errors;
         $errorsPass =$this->errorsPass;
@@ -225,5 +227,7 @@ class ControllerUser
            $this->mainPage();
         }
     }
+
+
       
 }  

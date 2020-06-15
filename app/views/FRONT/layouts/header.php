@@ -54,7 +54,7 @@
         </nav>
     </div>
     <div class="fade_in" id="top_separator"></div>
-    <div id="modal_box" class="modal_box">
+    <div id="modal_box" class="modal_box modal_animate">
         <i class="fa fa-remove"></i>
         <div id="login_title">SE CONNECTER</div>
         <form class="flexcolumn" id="login_form" action="login" method="post">
@@ -63,7 +63,6 @@
             <input type="password" class="log_in_field"   name="password" id="log_in_password" placeholder="Mot de passe...">
             <span class="form_error" id="passwordRequired"></span>
             <span class="form_error" id="wrongEmailPass"></span>
-            <a href="#" class="modal_links" title="Cliquez ici pour réinitialiser votre mot de passe">Mot de passe oublié ?</a>
             <button type="button" class="button"  id="login_button">Se connecter</button>
             <p>Nouvel apprenant ?</p>
             <a href="#" class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>

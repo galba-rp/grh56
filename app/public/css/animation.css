@@ -1,7 +1,7 @@
 /* opcity animation for signIn modal */
 .modal_animate {
-    animation: animateopacity 0.8s;
-    -webkit-animation: animateopacity 0.8s;
+    animation: animateopacity 2.8s;
+    -webkit-animation: animateopacity 2.8s;
 }
 
 @-webkit-keyframes animateopacity {

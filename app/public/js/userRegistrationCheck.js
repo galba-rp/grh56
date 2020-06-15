@@ -1,7 +1,6 @@
 //checking if user emil exists without reloading page
 $(document).ready(function () {
     $('#signup_button').on('click', function () {
-
         let signup_email = $('#sign_up_email').val();
         $.ajax({
             url: 'indexUser.php',

@@ -7,6 +7,7 @@ class ControllerAdmin
     private $object;
     public $errors;
 
+    // connecting to the model and creating  an array for errors display.
     public function __construct(){
         $this->object = new \GRH56\Models\AdminManager();
         $this->errors = [
@@ -16,28 +17,18 @@ class ControllerAdmin
             'not uploaded' => '',
         ];
     }
-
-    function admin()
-    {
-        echo "<script>function () {
-        $('#modal_admin').show();}
-        </script>";
-        require 'app/views/BACK/admin.php';
-    }
-
     function lessons(){
         require 'app/views/BACK/lessons.php';
     }
 
-    // lessonday creates lesson of the day 
+    // lessonWeek creates lesson of the Week 
     function lessonWeek(){
         $errors = $this->errors;
-        $errorsWord =  $this->errorsWord;
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($_POST);
         $upload_dir = "app/public/videos/";
         $upload_file = $upload_dir . basename($_FILES["myfile"]["name"]);
-        $upload = 1;
+        $upload = 1; //initial value
         $fileType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION));
 
         if(empty($title)){
@@ -68,6 +59,7 @@ class ControllerAdmin
             $errors['not uploaded'] = "An error has occured, please try again";
 
             require 'app/views/BACK/admin.php';
+
         }elseif (empty($errors['video']) && empty($errors['lesson']) && empty($errors['comment']) && empty($errors['not uploaded'])) {
             
             if (move_uploaded_file($_FILES["myfile"]["tmp_name"], $upload_file)){
@@ -95,7 +87,6 @@ class ControllerAdmin
         require 'app/views/BACK/lessons.php';
     }
         // updateWeekLeeson updates lesson's title and lesson's comment.
-        // ---TO DO --- modal for success message.
     function updateWeekLesson(){
         $errors = $this->errors;
         $allLessons = $this->object->allLessons();
@@ -121,11 +112,9 @@ class ControllerAdmin
                 throw new \Exception("updateWeekLesson failed");
            }
         }
-
     }
 
      // deleteWeekLesson delets lesson form db.
-        // ---TO DO --- modal for success message.
     function deleteWeekLesson(){
         extract($_POST);
         $lessonDelete = $this->object->lessonWeekDelet($id);
@@ -139,5 +128,4 @@ class ControllerAdmin
             throw new \Exception("deletWeekLesson failed");
         }
     }
-
 }

@@ -5,7 +5,8 @@ namespace GRH56\Controllers;
 class ControllerFront {   
     private $object;
     public $errorsContact;
-    
+
+    // connecting to the model and creating an array for errors display    
     public function __construct(){
         $this->object = new \GRH56\Models\FrontManager();
         $this->errorsContact = [
@@ -18,7 +19,7 @@ class ControllerFront {
     }
     
 
-    // home is getting lessons ant testimonials information from the database to display on  the front page.  
+    // home is getting lessons ant testimonials information from the database to display on the front page.  
     function home() {
         $lessons = $this->object->displayLessons();
         $testimonials = $this->object->displayTestimonials();
@@ -51,7 +52,6 @@ class ControllerFront {
         // switcing from key=>value array to indexed array for errors handling.
         $inedexedPost = array_values($_POST);      
         $errorsContact = $this->errorsContact;
-
         
         for($i= 0; $i < count($errorsContact); $i++){
             if (empty($inedexedPost[$i])){
@@ -62,7 +62,7 @@ class ControllerFront {
             $errorsContact['2'] = "L'adresse e-mail n'est pas valide !";
         }
 
-        // checking if there are any errors min $errorsContact
+        // checking if there are any errors in $errorsContact
         for($i= 0; $i < count($errorsContact); $i++){
             $errors;
             if (!empty($errorsContact[$i])){
@@ -85,7 +85,9 @@ class ControllerFront {
             unset($_POST['contact_subject']);
             unset($_POST['contact_message']);
            
+            //storing message in the DB.
             $sendmail = $this->object->saveMail($name, $surname, $email, $subject, $message);
+
             // --- to change to if ($sent == true) on server--
             if ($sendmail == true){
                 $_POST = [];
@@ -95,8 +97,7 @@ class ControllerFront {
             }
             else{
                 require 'app/views/FRONT/error.php';
-            }
-            
+            } 
         }else{
             require 'app/views/FRONT/contact.php';
         }

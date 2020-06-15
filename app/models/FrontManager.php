@@ -4,6 +4,7 @@
  class FrontManager extends Manager
  {     
 
+    //displayLessons retrieves all lessons form DB to be displayed on home page.
      public function displayLessons(){
          //conncting to dtabase through dbConnect() from class Manager
         $bdd = $this->dbConnect();
@@ -13,7 +14,8 @@
 
         return $lessons;
      }
-
+     
+     // displayTestimonials retrieves all testimonials form DB 
      public function displayTestimonials(){
         $bdd = $this->dbConnect();
         $testimonials = $bdd->prepare('SELECT * FROM testimonials');
@@ -23,6 +25,7 @@
         return $testimonials;
      }
 
+     //saveMail saves message from contact form to DB.
      public function saveMail($name, $surname, $email, $subject, $message){
          $bdd = $this->dbConnect();
          $mail = $bdd->prepare('INSERT INTO contactMessages(contact_name, surname, email, mailsubject, mail) VALUES (?, ?, ?, ?, ?)');

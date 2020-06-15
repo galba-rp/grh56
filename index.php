@@ -47,6 +47,8 @@ try{
             $controllerUser -> admin(); 
         }elseif($_GET['action'] == 'about_cookies'){
             $controllerFront -> aboutCookies(); 
+        } elseif($_GET['action'] == 'lost_password'){
+            $controllerUser -> lostPassword(); 
         } 
     }else{
         $controllerFront -> home();
@@ -54,10 +56,8 @@ try{
 
 // ---TODO--- create log file to errors.
 }catch(Exception $e){
-    var_dump("Error: " .$e->getMessage());
     require 'app/views/FRONT/error.php';
 }catch(Error $e){
-    var_dump("Error: " .$e->getMessage());
     require 'app/views/FRONT/error.php';
 }
 
