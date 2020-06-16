@@ -21,8 +21,10 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 ## Testing the website
 * Clone the repo
 
-## Roadmap
-* TO DO
+## TO DO
+*  - Set environmental variables for DB access.
+*  - Create password reinitialisation with random password generation and mail sending.
+*  - Acquire SSL certificate and create redirect to htpps.
 
 ## License
 Distributed under the MIT License. See LICENSE for more information.
