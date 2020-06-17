@@ -10,7 +10,6 @@ $(document).ready(function () {
                 return response.json();
             })
             .then(function (json) {
-                console.log(json);
                 // checking if defenition exists and appending text as a new "li"
                 $("#result").append("<li><span class='searchedWord'>" + word + ":</span> </li>");
                 for (let i = 0; i < json.length; i++) {

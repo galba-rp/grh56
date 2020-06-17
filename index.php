@@ -56,11 +56,9 @@ try{
 
 // ---TODO--- create log file to errors.
 }catch(Exception $e){
-    var_dump($e);
-    //require 'app/views/FRONT/error.php';
+    require 'app/views/FRONT/error.php';
 }catch(Error $e){
-    var_dump($e);
-    //require 'app/views/FRONT/error.php';
+    require 'app/views/FRONT/error.php';
 }
 
 
