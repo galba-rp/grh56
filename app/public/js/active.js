@@ -9,7 +9,9 @@ let lastChildSplit = lastChild.split("=");
 
 // getting action word
 let currentPage = lastChildSplit[0];
-
+if (currentPage == "") {
+  currentPage = "home";
+}
 window.onload = function load() {
   if (currentPage == "account") {
     document.getElementById("student").className += " active";

@@ -85,9 +85,7 @@ main {
     outline: none;
 }
 
-.active {
-    color: #8A0202;
-}
+
 
 /*HEADER STYLING*/
 .header_main {
@@ -1100,30 +1098,9 @@ footer {
     font: 1.25em 'Open Sans', sans-serif;
 }
 
-/*--- opcity animation for signIn modal-- */
-.modal_animate {
-    animation: animateopacity 1.4s;
-    -webkit-animation: animateopacity 1.4s;
-}
-
-@-webkit-keyframes animateopacity {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes animateopacity {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+/* active link*/
+.active {
+    color: #8A0202;
 }
 
 /*--- opcity animation for signIn modal-- */

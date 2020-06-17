@@ -4,7 +4,7 @@
 RewriteEngine On
 
 RewriteRule ^([a-zA-Z]+)$ index.php?action=$1 
-RewriteRule ^admin/([a-zA-Z]+)$ indexAdmin.php?action=$1 
+# RewriteRule ^admin/([a-zA-Z]+)$ indexAdmin.php?action=$1 
 
 
 
