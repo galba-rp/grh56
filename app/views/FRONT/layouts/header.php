@@ -43,7 +43,7 @@
                 endif;
                     ?>
                 <li class="<?php echo($show1)?>"><a href="home" class="menu_item" id="home">ACCUEIL</a></li>
-                <li class="<?php echo($show1)?>"><a href="about" class="menu_item" id="about">&#192;PROPOS</a></li>
+                <li class="<?php echo($show1)?>"><a href="about" class="menu_item" id="about">&#192; PROPOS</a></li>
                 <li class="<?php echo($show1)?>"><a href="courses" class="menu_item" id="courses">LES COURS</a></li>
                 <li class="<?php echo($show1)?>"><a href="contact" class="menu_item" id="contact">CONTACT</a></li>
                 <li class="<?php echo($show5)?>"><a href="student" class="menu_item" id="student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
@@ -58,7 +58,7 @@
         <i class="fa fa-remove"></i>
         <div id="login_title">SE CONNECTER</div>
         <form class="flexcolumn" id="login_form" action="login" method="post">
-            <input type="text" name='email' class="log_in_field" id="log_in_email" placeholder="Votre adresse mail...">
+            <input type="email" name='email' class="log_in_field" id="log_in_email" placeholder="Votre adresse mail...">
             <span  class="form_error" id="emailRequired"></span>
             <input type="password" class="log_in_field"   name="password" id="log_in_password" placeholder="Mot de passe...">
             <span class="form_error" id="passwordRequired"></span>
@@ -79,7 +79,7 @@
             <input type="text"  name="surname" class="log_in_field" id="sign_up_surname" placeholder="Votre nom ...">
             <span class="form_error" id="surnameRequired"></span>
             <label for="sign_up_email">ADRESSE MAIL :</label>
-            <input type="text"  name="email" class="log_in_field" id="sign_up_email" placeholder="Votre email ...">
+            <input type="email"  name="email" class="log_in_field" id="sign_up_email" placeholder="Votre email ...">
             <span class="form_error" id="upEmailRequired"></span>
             <label for="sign_up_password">MOT DE PASSE :</label>
             <input type="text"  name="password" class="log_in_field" id="sign_up_password" placeholder="Mot de passe ...">

@@ -12,7 +12,7 @@ include_once 'app/views/FRONT/layouts/header.php';
             <input type="text"  name="update_surname" class="log_in_field"  id="update_surname" value="<?php echo($_SESSION['surname'])?>">
             <span class="form_error"><?= $errors['surname'] ?></span>
             <label for="update_email">EMAIL :</label>
-            <input type="text"  name="update_email" class="log_in_field" id="update_email" value="<?php echo($_SESSION['email'])?>">
+            <input type="email"  name="update_email" class="log_in_field" id="update_email" value="<?php echo($_SESSION['email'])?>">
             <span class="form_error"><?= $errors['email'] ?></span>
             <button type="submit" class="button">Modifier</button>
         </form>

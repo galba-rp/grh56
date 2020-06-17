@@ -20,6 +20,7 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 
 ## Testing the website
 * Clone the repo
+* On localhost comment line 
 
 ## TO DO
 *  - Set environmental variables for DB access.

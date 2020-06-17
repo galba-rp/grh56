@@ -20,7 +20,8 @@ include_once 'app/views/FRONT/layouts/header.php';
                         <form method="post" action="indexAdmin.php?action=lessonWeek"  id="lod" enctype="multipart/form-data" class="flexcolumn">
                             <input type="text" class="newLesson"  id ="lesson_week1" name="title"  placeholder="lesson title" value="<?php if(isset($_POST['title'])) echo$_POST['title'] ?>">
                             <input type="text" class="newLesson" id ="lesson_week2" name="comment" placeholder="lesson comment" value="<?php if(isset($_POST['description'])) echo$_POST['description'] ?>">
-                                <input type="file" id="myfile" name="myfile">
+                            <input type="file" id="myfile" name="myfile">
+                            <p>Only MP4 files are allowed !</p>
                             <input type="submit" class="small_button admin_buttons"  id= "publish_button" value="Publish !">
                         </form>             
                     </div>

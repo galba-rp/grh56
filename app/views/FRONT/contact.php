@@ -14,7 +14,7 @@ include_once 'app/views/FRONT/layouts/header.php';
             <input type="text" name="contact_surname" class="contact_field" id="contact_surname" placeholder="Votre nom ..." value = <?php if(isset($_POST['contact_surname'])) echo $_POST['contact_surname'] ?>>
             <span class="form_error"><?= $errorsContact[1] ?></span>
             <label for="contact_email" class="label">Adresse mail :</label>
-            <input type="text" name="contact_email" class="contact_field" id="contact_email" placeholder="Votre adresse mail ..." value = <?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'] ?>>
+            <input type="email" name="contact_email" class="contact_field" id="contact_email" placeholder="Votre adresse mail ..." value = <?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'] ?>>
             <span class="form_error"><?= $errorsContact[2] ?></span>
             <label for="contact_subject" class="label">Objet :</label>
             <input type="text" name="contact_subject" class="contact_field" id="contact_subject" placeholder="Objet..." value = <?php if(isset($_POST['contact_subject'])) echo $_POST['contact_subject'] ?>>

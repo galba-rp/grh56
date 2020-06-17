@@ -11,8 +11,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        
         <title>GRH formation</title>
-        <meta name='description' content=''/>
-        <meta name='keywords' content=''/>
+        <meta name='description' content='Organisme de formation Datadocké spécialisé dans la formation sur-mesure en anglais pr les
+            professionnels &amp; les particuliers, éligible CPF (ancien DIF)'/>
     </head>
 
     <body class="none">
