@@ -30,12 +30,12 @@
     }
 
     // lessonWeekDelet delets lesson from db.
-    function lessonWeekDelet($id){
+    function lessonWeekDelet(int $id){
         $bdd = $this->dbConnect();
-        $getVideo = $bdd->prepare('SELECT lod_file FROM lessonOfTheWeek WHERE id = ?');
+        $getVideo = $bdd->prepare('SELECT lod_file FROM lessonoftheweek WHERE id = ?');
         $getVideo->execute([$id]);
         $getVideo = $getVideo->fetch();
-        $deleteLesson = $bdd->prepare('DELETE FROM lessonOfTheWeek WHERE id = ?');
+        $deleteLesson = $bdd->prepare('DELETE FROM lessonoftheweek WHERE id = ?');
         $deleteLesson->execute([$id]);
         
         if ($deleteLesson){

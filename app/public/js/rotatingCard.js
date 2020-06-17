@@ -1,4 +1,4 @@
-//adding delay to transition for back sides on mouseleave event.
+//adding delay to transition for back sides on mouseleave eventv for admin page.
 $(document).ready(function () {
     $("#card1").mouseenter(function () {
         $(".card", this).css("transform", "rotateY(180deg)");
@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
     $("#card1").mouseleave(function () {
         $(".card", this).css("transform", "rotateY(0deg)");
-        $(".card", this).css("transition-delay", "0.8s");
+        $(".card", this).css("transition-delay", "6s");
     });
 
     $("#card2").mouseenter(function () {
@@ -18,37 +18,5 @@ $(document).ready(function () {
     $("#card2").mouseleave(function () {
         $(".card", this).css("transform", "rotateY(0deg)");
         $(".card", this).css("transition", "transform 1.2s");
-    });
-
-    $("#cardW1").mouseenter(function () {
-        $(".card", this).css("transform", "rotateY(180deg)");
-        $(".card", this).css("transition", "transform 1.2s");
-
-    });
-
-    $("#cardW1").mouseleave(function () {
-        $(".card", this).css("transform", "rotateY(0deg)");
-        $(".card", this).css("transition-delay", "0.8s");
-    });
-
-    $("#cardW2").mouseenter(function () {
-        $(".card", this).css("transform", "rotateY(180deg)");
-        $(".card", this).css("transition", "transform 1.2s");
-
-    });
-
-    $("#cardW2").mouseleave(function () {
-        $(".card", this).css("transform", "rotateY(0deg)");
-        $(".card", this).css("transition-delay", "0.8s");
-    });
-    $(".cadmin_back").mouseenter(function () {
-        $(".card", this).css("transform", "rotateY(180deg)");
-        $(".card", this).css("transition", "transform 1.2s");
-
-    });
-
-    $(".cadmin_back").mouseleave(function () {
-        $(".card", this).css("transform", "rotateY(0deg)");
-        $(".card", this).css("transition-delay", "0.8s");
     });
 });

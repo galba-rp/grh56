@@ -1,5 +1,7 @@
 <?php
+
  namespace GRH56\Models;
+
  class UserManager extends Manager
  {     
    // session sets session variables to use across class (DRY)

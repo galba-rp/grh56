@@ -79,16 +79,10 @@ main {
     background-image: linear-gradient(to right, white, lightslategray, white);
 }
 
-.fade_in {
-    display: none
-}
-
-.fade_in_menu {
-    display: none
-}
-
+.fade_in,
+.fade_in_menu,
 .none {
-    display: none;
+    display: none
 }
 
 *:focus {
@@ -132,9 +126,6 @@ main {
     transition: font-size .4s;
     -webkit-transition: font-size .4s;
     /*Safari and Chrome*/
-    -moz-transition: font-size .4s;
-    /*Firefox 4*/
-    -o-transition: font-size .4s;
 }
 
 .menu_item:hover {
@@ -188,6 +179,22 @@ main {
     height: 4px;
     margin: 5px 0;
     transition: all .5s ease-in-out;
+}
+
+.bar_one {
+    transform: translateY(11px) rotate(225deg);
+}
+
+.bar_two {
+    transform: scale(0);
+}
+
+.bar_three {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.top_navmenu {
+    display: flex !important;
 }
 
 /*MODAL BOX*/
@@ -375,13 +382,12 @@ main {
     position: relative;
     height: 400px;
     width: 350px;
-    margin: 3em 10px;
+    margin: 3em 0.8em;
     perspective: 500px;
     -webkit-perspective: 500px;
 }
 
 .card {
-    background-color: rgba(1, 56, 92, 0.562);
     color: white;
     position: absolute;
     width: 100%;
@@ -389,10 +395,15 @@ main {
     box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding-bottom: 20px;
-    transition: transform 1s;
-    -webkit-transition: -webkit-transform 1;
+    transition: transform 1.2s;
+    -webkit-transition: -webkit-transform 1.2s;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+}
+
+.card_front {
+    background-color: rgba(1, 56, 92, 0.562);
+    -webkit-backface-visibility: hidden;
 }
 
 .lesson:hover .card {
@@ -411,21 +422,19 @@ main {
     border-radius: 5px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    padding-top: 20px;
 
 }
 
 .img_lesson {
     width: 80%;
     height: auto;
+    margin-top: 20px;
 }
 
 .card_back {
     background: #03446A;
     color: white;
     font-size: 1.5em;
-    text-align: justify;
-    text-align-last: center;
     text-indent: 15px;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
@@ -435,10 +444,9 @@ main {
     bottom: 25px;
     color: white;
     font: 1.15em 'Playfair Display', serif;
-    left: 0;
     position: absolute;
-    right: 0;
-    text-indent: 0;
+    left: 15%;
+
 }
 
 .card_back a:hover {
@@ -461,7 +469,6 @@ main {
     color: white;
     padding: 2px 16px;
 }
-
 
 /* ARTICLE 2 */
 
@@ -603,10 +610,6 @@ footer {
     align-items: center;
 }
 
-#icon_footer img {
-    margin-left: 2em;
-}
-
 #footer_sub_menu,
 #social {
     flex-basis: 30%;
@@ -668,7 +671,7 @@ footer {
     margin-top: 50px;
 }
 
-#about article {
+#about_me article {
     margin: 20px 30px;
     padding: 20px 0;
 }
@@ -737,7 +740,7 @@ footer {
 
 .course h1 {
     color: white;
-    font: 3em 'Charm', sans-serif, bold;
+    font: 2.6em 'Charm', sans-serif, bold;
     text-align: center;
     margin-top: 2em;
     margin-bottom: 0;
@@ -856,16 +859,12 @@ footer {
     margin-top: 25%;
 }
 
-#browseFile {
-    justify-content: left;
-}
-
 #myfile {
-    padding: 12px 0 0 25px;
+
     font: 1em 'Open Sans';
     margin-top: 5px;
-    height: 2em;
-    width: 155px
+
+    color: #01385C;
 }
 
 #myfile:hover,
@@ -874,13 +873,7 @@ footer {
     cursor: pointer;
 }
 
-#showName {
-    font-size: 0.75em;
-    width: 250px;
-    height: auto;
-    margin-top: 5px;
-    color: red;
-}
+
 
 #publish_button {
     margin-top: 80px;
@@ -888,7 +881,12 @@ footer {
 
 .cadmin {
     border-radius: 35px;
+}
+
+.cadmin_front {
     background-color: #7a93a1;
+    border-radius: 35px;
+    -webkit-backface-visibility: hidden;
 }
 
 .cadmin_back {
@@ -990,6 +988,12 @@ footer {
 
 .account_card form label {
     margin-left: 10px;
+
+}
+
+.red_text {
+    color: red;
+    font: 1.3em 'Open Sans';
 }
 
 #delete_button {
@@ -1008,7 +1012,7 @@ footer {
 }
 
 #delete_account_text {
-    font: 1em 'Open Sans';
+    font: 1.2em 'Open Sans';
     text-align: justify;
 }
 

@@ -5,7 +5,7 @@ include_once 'layouts/header.php';
 <main>
     <section class="normal_width fade bottom">
         <article class="course" id="cp_article1">
-            <h1>ANGLAIS GENRAL</h1>
+            <h1>ANGLAIS GENERAL</h1>
             <div>
                 <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
                 <h2> Objectif de la formation :</h2>
@@ -19,27 +19,27 @@ include_once 'layouts/header.php';
                     <div class="content">
                         <h3>Contenu de la formation :</h3>
                         <ul >
-                            <li>Saluer et utiliser les formules de politesse;</li>
-                            <li>Se présenter et présenter quelqu&#39;un;</li>
-                            <li>Exprimer ses goûts, parler de son environnement professionnel;</li>
-                            <li>S&#39;informer (poser des questions et savoir y répondre);</li>
-                            <li>Echanger au téléphone;</li>
-                            <li>Rédiger des mails professionnels simples;</li>
-                            <li>Formuler une demande polie;</li>
-                            <li>Demander des informations pratiques;</li>
-                            <li>Exprimer un besoin, un souhait, un conseil ou une obligation</li>
-                            <li>Demander son chemin et indiquer une direction;</li>
+                            <li>Saluer et utiliser les formules de politesse ;</li>
+                            <li>Se présenter et présenter quelqu&#39;un ;</li>
+                            <li>Exprimer ses goûts, parler de son environnement professionnel ;</li>
+                            <li>S&#39;informer (poser des questions et savoir y répondre) ;</li>
+                            <li>Echanger au téléphone ;</li>
+                            <li>Rédiger des mails professionnels simples ;</li>
+                            <li>Formuler une demande polie ;</li>
+                            <li>Demander des informations pratiques ;</li>
+                            <li>Exprimer un besoin, un souhait, un conseil ou une obligation ;</li>
+                            <li>Demander son chemin et indiquer une direction ;</li>
                             <li>Envisager un voyage à l&#39;étranger (à la gare, à l&#39;aéroport, location de véhicule,
-                                réservation (hôtel, restaurant),...);</li>
-                            <li>Faire des recommandations, conseiller;</li>
+                                réservation (hôtel, restaurant),...) ;</li>
+                            <li>Faire des recommandations, conseiller.</li>
                         </ul>
                     </div>
                     <div class="points">
                         <h3>Les points forts de la formation :</h3>
                         <ul>
-                            <li>Approches pédagogiques variées, adaptées, interactives et participatives;</li>
-                            <li>Accentuation de la pratique orale;</li>
-                            <li>Utilisation de nombreuses activités diverses;</li>
+                            <li>Approches pédagogiques variées, adaptées, interactives et participatives ;</li>
+                            <li>Accentuation de la pratique orale ;</li>
+                            <li>Utilisation de nombreuses activités diverses .</li>
                         </ul>
                     </div>
                 </div>
@@ -61,20 +61,21 @@ include_once 'layouts/header.php';
                             domaine d&#39;activité.</p>
                             <h4>Orientations possibles:</h4>
                         <ul >
-                            <li>Voyage d&#39;affaires à l&#39;étranger;</li>
+                            <li>Voyage d&#39;affaires à l&#39;étranger ;</li>
                             <li>Communication par mail, au téléphone;</li>
-                            <li>Prise en charge d&#39;un visiteur étranger;</li>
-                            <li>Présentation d&#39;une action commerciale;</li>
+                            <li>Prise en charge d&#39;un visiteur étranger ;</li>
+                            <li>Présentation d&#39;une action commerciale ;</li>
                             <li>Préparation d&#39;une réunion;</li>
-                            <li>etc. Formation validée par un test Linguaskill;</li>
+                            <li>etc.</li>
+                            <li>Formation validée par un test Linguaskill.</li>
                         </ul>
                     </div>
                     <div class="points">
                         <h3 class="points">Les points forts de la formation :</h3>
                         <ul>
-                            <li>Approches pédagogiques variées, adaptées, interactives et participatives;</li>
-                            <li>Accentuation de la pratique orale;</li>
-                            <li>Utilisation de nombreuses activités diverses;</li>
+                            <li>Approches pédagogiques variées, adaptées, interactives et participatives ;</li>
+                            <li>Accentuation de la pratique orale ;</li>
+                            <li>Utilisation de nombreuses activités diverses.</li>
                         </ul>
                     </div>
                 </div>
@@ -82,7 +83,7 @@ include_once 'layouts/header.php';
 
         </article>
         <article class="course" id="cp_article3">
-            <h1>ANGLAIS : HOTTELERIE ET RESTAURATION</h1>
+            <h1>ANGLAIS DE L'HOTTELERIE ET DE LA RESTAURATION</h1>
             <div>
                 <img src="app/public/images/generalE.jpg" alt="Two people having conversation">
                 <h2> Objectif de la formation :</h2>
@@ -96,27 +97,27 @@ include_once 'layouts/header.php';
                     <div class="content">
                         <h3>Contenu de la formation :</h3>
                         <ul >
-                            <li>Saluer et utiliser les formules de politesse;</li>
-                            <li>Se présenter et présenter quelqu&#39;un;</li>
-                            <li>Exprimer ses goûts, parler de son environnement professionnel;</li>
-                            <li>S&#39;informer (poser des questions et savoir y répondre);</li>
-                            <li>Echanger au téléphone;</li>
-                            <li>Rédiger des mails professionnels simples;</li>
-                            <li>Formuler une demande polie;</li>
+                            <li>Saluer et utiliser les formules de politesse ;</li>
+                            <li>Se présenter et présenter quelqu&#39;un ;</li>
+                            <li>Exprimer ses goûts, parler de son environnement professionnel ;</li>
+                            <li>S&#39;informer (poser des questions et savoir y répondre) ;</li>
+                            <li>Echanger au téléphone ;</li>
+                            <li>Rédiger des mails professionnels simples ;</li>
+                            <li>Formuler une demande polie ;</li>
                             <li>Demander des informations pratiques;</li>
-                            <li>Exprimer un besoin, un souhait, un conseil ou une obligation</li>
-                            <li>Demander son chemin et indiquer une direction;</li>
+                            <li>Exprimer un besoin, un souhait, un conseil ou une obligation ;</li>
+                            <li>Demander son chemin et indiquer une direction ;</li>
                             <li>Envisager un voyage à l&#39;étranger (à la gare, à l&#39;aéroport, location de véhicule,
-                                réservation (hôtel, restaurant),...);</li>
-                            <li>Faire des recommandations, conseiller;</li>
+                                réservation (hôtel, restaurant),...) ;</li>
+                            <li>Faire des recommandations, conseiller.</li>
                         </ul>
                     </div>
                     <div class="pointst">
                         <h3>Les points forts de la formation :</h3>
                         <ul>
-                            <li>Approches pédagogiques variées, adaptées, interactives et participatives;</li>
-                            <li>Accentuation de la pratique orale;</li>
-                            <li>Utilisation de nombreuses activités diverses;</li>
+                            <li>Approches pédagogiques variées, adaptées, interactives et participatives ;</li>
+                            <li>Accentuation de la pratique orale ;</li>
+                            <li>Utilisation de nombreuses activités diverses.</li>
                         </ul>
                     </div>
                 </div>

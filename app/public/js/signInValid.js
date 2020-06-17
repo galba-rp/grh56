@@ -43,4 +43,5 @@ formValidSignIn.addEventListener("click", function validate(event) {
         }
         formFieldsSignInRequired[i].style.color = "red";
     }
+
 });

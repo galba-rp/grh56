@@ -4,7 +4,7 @@ document.getElementById("cookies_more").addEventListener("click", aboutCookies);
 function setCookie() {
     var expires = new Date;
     expires.setFullYear(expires.getFullYear() + 1);
-    document.cookie = 'grh56=yes; path=/; SameSite=lax' + expires.toUTCString() + ';';
+    document.cookie = 'grh56=yes; path=/; SameSite=lax;' + expires.toUTCString() + ';';
     document.getElementById("cookie_bar").classList.add("none");
 }
 
@@ -13,5 +13,5 @@ function read() {
 }
 
 function aboutCookies() {
-    window.location.href = "cookies";
+    window.location.href = "aboutcookies";
 }

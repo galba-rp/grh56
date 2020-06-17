@@ -47,7 +47,7 @@
                 <li class="<?php echo($show1)?>"><a href="courses" class="menu_item" id="courses">LES COURS</a></li>
                 <li class="<?php echo($show1)?>"><a href="contact" class="menu_item" id="contact">CONTACT</a></li>
                 <li class="<?php echo($show5)?>"><a href="student" class="menu_item" id="student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
-                <li class="<?php echo($show6)?>"><a href="account" class="menu_item" id="acount">MON COMPTE</a></li>
+                <li class="<?php echo($show6)?>"><a href="account" class="menu_item" id="account">MON COMPTE</a></li>
                 <li class="<?php echo($show3)?>" ><a href="logout" class="menu_item" id="logout">SE DECONNECTER</a></li>
                 <li class="<?php echo($show2)?>"><a class="menu_item" id="connect">SE CONNECTER</a></li>
             </ul>
@@ -68,7 +68,7 @@
             <a href="#" class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>
         </form>
     </div>
-    <div id="signin_box" class="modal_box">
+    <div id="signin_box" class="modal_box modal_animate">
         <i class="fa fa-remove"></i>
         <div id="signin_title"></div>
         <form class="flexcolumn"  id="signup_form"  method="post">
@@ -90,7 +90,7 @@
             <button type="button" id="signup_button" class="button">Créer mon compter</button>
         </form>
     </div>
-    <div id="message_modal" class="modal_box message <?=$show?>">
+    <div id="message_modal" class="modal_box modal_animate message <?=$show?>">
         <p id="success_message"><?=$message?></p>
         <button type="button" id="messsage_ok" class="button">OK</button>
     </div>

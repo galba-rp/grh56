@@ -31,7 +31,7 @@ include_once 'layouts/header.php';
                     </div>
                     <div class="card_back">
                         <p><?= $lesson['description']?></p>
-                        <a href="index.php?action=courses" title="Découvrez nos cours">EN SAVOIR PLUS</a>
+                        <a href="courses" title="Découvrez nos cours">EN SAVOIR PLUS</a>
                     </div>
                 </div>
             </div>
@@ -42,13 +42,13 @@ include_once 'layouts/header.php';
         <div class="pagedivider"></div>
         <h2 id="companies">Les entreprises qui m’ont fait confiance</h2>
         <div class="flex_row" id="comp_base">
-            <a href="https://www.opcalia.com/" title="Cliquez-ici pour visiter la site web de Opcalia"><img src="app/public/images/akto_s.png" alt="AKTO logo"></a>
-            <a href="http://aflviv.com.ua/fr/" title="Cliquez-ici pour visiter la site web de Alliance française"><img src="app/public/images/af_s.png" alt="Alinace francaise logo"></a>
-            <a href="https://www.limelight.com/" title="Cliquez-ici pour visiter la site web de Limelight networks"><img src="app/public/images/llnw_s.jpeg" alt="Limelight networks logo"></a>
-            <a href="https://www.morbihan.cci.fr/" title="Cliquez-ici pour visiter la site web de CCI de Morbihan"><img src="app/public/images/cci_s.jpg" alt="CCI Morbihan logo"></a>
-            <a href="https://www.maven.co/" title="Cliquez-ici pour visiter la site web de Maven Research"><img src="app/public/images/maven_s.png" alt="Maven Research logo"></a>
-            <a href="https://ua.ambafrance.org/" title="Cliquez-ici pour visiter la site web de Ambassade de France"><img src="app/public/images/ambassade_s.jpg" alt="Ambassade de France en Ukraine logo"></a>
-            <a href="https://www.afdas.com" title="Cliquez-ici pour visiter la site web de Afdas"><img src="app/public/images/afdas_s.jpg" alt="Afdas logo"></a>
+            <a href="https://www.opcalia.com/" target="_blank" title="Cliquez-ici pour visiter la site web de Opcalia"><img src="app/public/images/akto_s.png" alt="AKTO logo"></a>
+            <a href="http://aflviv.com.ua/fr/" target="_blank" title="Cliquez-ici pour visiter la site web de Alliance française"><img src="app/public/images/af_s.png" alt="Alinace francaise logo"></a>
+            <a href="https://www.limelight.com/" target="_blank" title="Cliquez-ici pour visiter la site web de Limelight networks"><img src="app/public/images/llnw_s.jpeg" alt="Limelight networks logo"></a>
+            <a href="https://www.morbihan.cci.fr/" target="_blank" title="Cliquez-ici pour visiter la site web de CCI de Morbihan"><img src="app/public/images/cci_s.jpg" alt="CCI Morbihan logo"></a>
+            <a href="https://www.maven.co/" target="_blank" title="Cliquez-ici pour visiter la site web de Maven Research"><img src="app/public/images/maven_s.png" alt="Maven Research logo"></a>
+            <a href="https://ua.ambafrance.org/" target="_blank" title="Cliquez-ici pour visiter la site web de Ambassade de France"><img src="app/public/images/ambassade_s.jpg" alt="Ambassade de France en Ukraine logo"></a>
+            <a href="https://www.afdas.com" target="_blank" title="Cliquez-ici pour visiter la site web de Afdas"><img src="app/public/images/afdas_s.jpg" alt="Afdas logo"></a>
 
         </div>
         <div class="pagedivider"></div>

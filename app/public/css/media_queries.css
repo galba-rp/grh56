@@ -79,7 +79,7 @@
 
 
 
-@media (max-width: 720px) {
+@media only screen and (max-width: 768px) {
 
     /*HEADER*/
     .normal_width {
@@ -123,7 +123,7 @@
 
     .modal_box {
         width: 90%;
-        top: 10%;
+        top: 8%;
     }
 
     /*MAIN SECTION*/
@@ -135,6 +135,10 @@
         top: 60%;
         left: 50%;
         transform: translate(-40%, 0);
+    }
+
+    .top_article h1 {
+        font-size: 1.1em;
     }
 
     .top_article p {
@@ -179,25 +183,27 @@
 
     /* ABOUT PAGE*/
 
-    #about_buuble {
+    #about_bubble {
+        flex-direction: column;
         width: 90%;
         height: auto;
     }
 
-    #about img {
+    #about_me img {
         float: none;
         width: 100%;
         height: auto;
         margin: 0 0;
     }
 
-    #about .charm_p {
+    #about_me .charm_p {
         font: 1.9em 'Charm', sans-serif, bold;
     }
 
-    #about .cormorant_p {
+    #about_me .cormorant_p {
         font: 1.5em 'Cormorant', serif
     }
+
 
     /*CONTACT PAGE*/
     #contact_section {
@@ -217,6 +223,14 @@
 
     .cp_flex {
         flex-direction: column;
+    }
+
+    .course h1 {
+        font-size: 2.2em;
+    }
+
+    .course h2 {
+        font-size: 2em;
     }
 
     /*ACCOUNT SECTION*/

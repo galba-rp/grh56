@@ -11,7 +11,7 @@ include_once 'app/views/FRONT/layouts/header.php';
         </div>
             <?php foreach($allLessons as $lesson): ?>
                 <div class="week_card">
-                        <form class="account_form flexcolumn" action="indexAdmin.php?action=updateWeekLesson" method="post">
+                        <form class="account_form flexcolumn" action="indexAdmin.php?action=updateLesson" method="post">
                             <input type="hidden" value="<?= $lesson['id']?>" name="id"/>
                             <input type="text"  name="update_title" class="log_in_field" value="<?= $lesson['lod_title']?>">
                             <input type="text"  name="update_comment" class="log_in_field"   value="<?= $lesson['lod_comment']?>">

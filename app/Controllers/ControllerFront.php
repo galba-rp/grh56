@@ -20,14 +20,13 @@ class ControllerFront {
     
 
     // home is getting lessons ant testimonials information from the database to display on the front page.  
-    function home() {
+    function home(){
         $lessons = $this->object->displayLessons();
         $testimonials = $this->object->displayTestimonials();
        
         require 'app/views/FRONT/home.php';
     }
 
-    
     function contactForm(){
         require 'app/views/FRONT/contact.php';
     }
@@ -47,7 +46,6 @@ class ControllerFront {
     function sendMessage(){
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
         extract($_POST);
-       
 
         // switcing from key=>value array to indexed array for errors handling.
         $inedexedPost = array_values($_POST);      
@@ -71,25 +69,19 @@ class ControllerFront {
         }
         if($errors == 0){
             $to = 'galba.rp@gmail.com';
-            $subject  = $contact_subject;
-            $message =  " From: " . $contact_name . " at " . $contact_email . "\n" . nl2br($contact_message); 
-            $headers =  $contact_email . "/r/n";
-            $headers .= 'MIME-Version: 1.0' .  "/r/n";
-            $headers .= 'Content-type: text/plain; charset=utf-8' .  "/r/n";
+            $subject  = $_POST['contact_subject'];
+            $message =  'From : ' .  $contact_name ." " . $contact_surname . "\r\n" . $contact_email . "\r\n" . $contact_message . ";  "; 
+            $headers = 'MIME-Version: 1.0';           
+            $headers .= 'Content-type: text/HTML; charset=utf-8';
 
 
             $sent = mail($to, $subject, $message, $headers);
-            unset($_POST['contact_name']);
-            unset($_POST['contact_surname']);
-            unset($_POST['contact_email']);
-            unset($_POST['contact_subject']);
-            unset($_POST['contact_message']);
            
             //storing message in the DB.
-            $sendmail = $this->object->saveMail($name, $surname, $email, $subject, $message);
+            $sendmail = $this->object->saveMail($contact_name, $contact_surname, $contact_email, $subject, $message);
 
             // --- to change to if ($sent == true) on server--
-            if ($sendmail == true){
+            if ($sent == true){
                 $_POST = [];
                 $show = "show";
                 $message = "Merci, votre message à été envoyé  !";

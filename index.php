@@ -31,11 +31,13 @@ try{
             $controllerUser -> logOut();
         }elseif($_GET['action'] == 'student'){
             $controllerUser -> logedIn();
+        }elseif($_GET['action'] == 'aboutcookies'){
+            $controllerFront -> aboutCookies(); 
         }elseif($_GET['action'] == 'account'){
             $controllerUser -> account();
-        }elseif($_GET['action'] == 'modif' && isset($_SESSION['name'])){
+        }elseif($_GET['action'] == 'accountUpdate' && isset($_SESSION['name'])){
             $controllerUser -> accountUpdate();
-        }elseif($_GET['action'] == 'modif_pass' && isset($_SESSION['name'])){
+        }elseif($_GET['action'] == 'passwordUpdate' && isset($_SESSION['name'])){
             $controllerUser -> changePass();
         }elseif($_GET['action'] == 'delete' && isset($_SESSION['name'])){
             $controllerUser -> deleteUser();
@@ -43,11 +45,9 @@ try{
             $controllerUser -> checkEmailExists();
         }elseif($_GET['action'] == 'send'){
             $controllerFront -> sendMessage();
-        }elseif($_GET['action']== 'admin' && isset($_SESSION['name'])){
+        }elseif($_GET['action']== 'admin' && isset($_SESSION['name']) && $_SESSION['status'] == 1){
             $controllerUser -> admin(); 
-        }elseif($_GET['action'] == 'about_cookies'){
-            $controllerFront -> aboutCookies(); 
-        } elseif($_GET['action'] == 'lost_password'){
+        }elseif($_GET['action'] == 'lost_password'){
             $controllerUser -> lostPassword(); 
         } 
     }else{

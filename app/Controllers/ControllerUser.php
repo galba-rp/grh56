@@ -8,7 +8,7 @@ class ControllerUser
     public $errors;
     public $errorsPass;
 
-    // connecting to the model and creating arrays for errors display.
+    //connecting to the model and creating arrays for errors display.
     function __construct(){
         $this->object = new \GRH56\Models\UserManager();
         $this->errors = [
@@ -25,28 +25,28 @@ class ControllerUser
         require 'app/views/FRONT/error.php';
     }
 
-    // mainPage redirects to the homepage through controllerFront to load lessons from the database
+    // mainPage redirects to the homepage through controllerFront to load lessons from the database.
     public function mainPage(){
         $controllerFront = new \GRH56\Controllers\ControllerFront();
-        header('Location: home');
-        
+        header('Location: home');  
     }
     
-    // userRegistrationCheck checking if email exists in the database
+    // userRegistrationCheck checking if email exists in the database.
      function userRegistrationCheck(){
-        // filter removes tags/special characters from array    
+        // filter removes tags/special characters from array.    
        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             //using email  input for sql request  
             $email = ($_POST['email']);
             $signUpData = $this->object->checkEmailexists($email);
-             //checking response from model(if there is any data in the array) 
+             //checking response from model(if there is any data in the array). 
             if(count($signUpData) > 0){
                 exit("Cette adresse e-mail est déjà utilisée ");
             }else{
                 exit("ok");
             }
     }
-    // registring new user(adding a row into Database)
+
+    //registring new user(adding a row into Database).
     function signUp(){   
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
             $name = $_POST['name'];
@@ -54,7 +54,7 @@ class ControllerUser
             $email = $_POST['email'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             
-            //sending user details to the database
+            //sending user details to the database.
             $userSignUp = $this->object->userRegister($name, $surname, $email, $password);
             if($userSignUp == 'true'){
                 exit('registred');
@@ -62,7 +62,8 @@ class ControllerUser
                 throw new \Exception("error");
             }
     }
-    // checking  on login if user email exists and password correct
+
+    //checking  on login if user email exists and password correct.
     function checkUserLogIn(){
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         if (isset($_POST['signin'])){
@@ -83,16 +84,16 @@ class ControllerUser
         }        
     }
 
-    //if checkUser sends true, then gooing to student page or admin page depending on $_SESSION['status]
+    //if checkUser sends true, then gooing to student page or admin page depending on $_SESSION['status].
     function logedIn(){  
         if(isset($_SESSION['name']) && $_SESSION['status'] == '0'){
             $lod = $this->object->latestLesson();
             require 'app/views/STUDENT/student.php';
         }elseif(isset($_SESSION['name']) && $_SESSION['status'] == '1'){
-            require 'app/views/BACK/admin.php';
+            header('Location: admin');
         }else{
             $this->mainPage();
-        }
+        } 
     }
     
     //logOut destroying session on logout.
@@ -103,7 +104,6 @@ class ControllerUser
         $this->mainPage();
     }
 
-
     function account(){
         $errors = $this->errors;
         $errorsPass =$this->errorsPass;
@@ -113,7 +113,8 @@ class ControllerUser
             $this->mainPage();
         }
     }
-    // function to update student data
+    
+    //function to update student data.
     function accountUpdate(){
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         $nameUpdate = $_POST['update_name'];
@@ -149,22 +150,26 @@ class ControllerUser
             if($userDataUpdate == 'true'){   
                 $show = "show";
                 $message = "Le changement a bien été pris en compte !";
-                require 'app/views/STUDENT/student.php';
-            }else{ 
-            throw new \Exception("update failed");
+                if($_SESSION['status'] == 1){
+                    require 'app/views/BACK/admin.php';
+                } else {
+                    require 'app/views/STUDENT/student.php';
+                }
+            } else { 
+                throw new \Exception("update failed");
             }
-        }else{
+        } else {
             $errorsPass =$this->errorsPass;
             if(isset($_SESSION['name'])){
-                require 'app/views/STUDENT/studentaccount.php';
-            }else{
+                require 'app/views/STUDENT/account.php';
+            } else {
                 $this->mainPage();
             }
         }
     } 
+
     // function to change student password (checking if old password corresponds to db data and only than changing to new password)
     function changePass(){
-
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         $password= $_POST['old_password'];
         $newPass = $_POST['new_password'];
@@ -172,58 +177,73 @@ class ControllerUser
         $newPasswordHash = password_hash($newPass, PASSWORD_DEFAULT);
         $errorsPass =$this->errorsPass;
         $errors = $this->errors;
+
         if(empty($password)){
             $errorsPass['old_pass'] = 'Mot de passe manquant !';
-        }else{
+        } else {
             $checkPassword = $this->object->checkLogIn($email, $password);
             if($checkPassword == true){
                 $errorsPass['old_pass'] = '';
-            }else{
+            } else {
                 $errorsPass['old_pass'] = 'Mot de passe incorrect!';
             }      
         }
+
         if(empty($newPass)){
             $errorsPass['new_pass'] = 'Mot de passe manquant !';
         }elseif(!preg_match('/^(?=.*\d)(?=.*[a-zà-öø-ÿ])(?=.*[A-Z]).{6,}$/', $newPass)){   
             $errorsPass['new_pass'] = "Mot de passe n'est pas conforme !";   
         }
+
         if(empty($errorsPass['old_pass']) && empty($errorsPass['new_pass'])){                
             $newPassword = $this->object->changePassword($newPasswordHash, $email);
                 if($newPassword == true){
                     $show = "show";
                     $message = "Le changement a bien été pris en compte !";
-                    require 'app/views/STUDENT/student.php';
-                }else{
+
+                    if($_SESSION['status'] == 1){
+                        require 'app/views/BACK/admin.php';
+                    } else {
+                        require 'app/views/STUDENT/student.php';
+                    }
+                } else {
                     throw new \Exception("update failed");
                 }
-        }else{
+        } else {
             if(isset($_SESSION['name'])){
-                require 'app/views/STUDENT/studentaccount.php';
-            }else{
+                require 'app/views/STUDENT/account.php';
+            } else {
                 $this->mainPage();
             }
         }
     }
     
+    //deletUser delets user data from DB.
     function deleteUser(){
+        $checkHere = "";
         $id =  $_SESSION['user'];
-        $deleteUser = $this->object->deleteUser( $id); 
-        //clears SESSION data and destroys all data registered to a session
-        if($deleteUser  == true){
-            $_SESSION = array();
-            session_destroy();
-            $controllerFront = new \GRH56\Controllers\ControllerFront();
-            $controllerFront -> home();
+        if (!empty($_POST)){
+            $deleteUser = $this->object->deleteUser( $id);
+            //clears SESSION data and destroys all data registered to a session.
+            if($deleteUser  == true){
+                $_SESSION = array();
+                session_destroy();
+                $controllerFront = new \GRH56\Controllers\ControllerFront();
+                $controllerFront -> home();
+            } else {
+                throw new \Exception("deleteUser failed");
+            }
         }else{
-            throw new \Exception("deleteUser failed");
+            $checkHere = "Veuillez cocher ici !";
+            require 'app/views/STUDENT/account.php';
         }
-        
     }
     
+    // checks if session is set and redirects to admin page or else to homepage.
     function admin(){
-        if(isset($_SESSION['name'])){
+        if(isset($_SESSION['name']) && $_SESSION['status'] == 1){
             require 'app/views/BACK/admin.php';
-        }else{
+        } else {
            $this->mainPage();
         }
     }

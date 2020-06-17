@@ -4,7 +4,7 @@ include_once 'layouts/header.php';
 ?>
 
 <main>
-    <section class="normal_width fade bottom" id="about">
+    <section class="normal_width fade bottom" id="about_me">
         <div id="about_bubble">
             <img src="app/public/images/bubble_l.png" alt="Text buubble">
             <img src="app/public/images/bubble_r.png" alt="Text buubble">
@@ -14,13 +14,16 @@ include_once 'layouts/header.php';
             <img src="app/public/images/london_s.jpg" alt="London" id="london">
             <div>
                 <h2 class="charm_p">Qui suis-je ?</h2>
-                <p class="cormorant_p story">Formatrice d’anglais expérimentée, j’ai habité 7 ans entre l’Angleterre et l’Australie. Diplômé d’une université anglaise prestigieuse (Imperial College London), j’ai enseigné à de nombreuses personnes dans plusieurs pays et secteurs professionnels différents.</p>
+                <p class="cormorant_p story">Formatrice d’anglais expérimentée, j’ai habité 7 ans entre 
+                    l’Angleterre et l’Australie. Diplômée d’une université anglaise prestigieuse 
+                    (Imperial College London), j’ai enseigné à de nombreuses personnes dans plusieurs
+                     pays et secteurs professionnels différents.</p>
             </div>
         </article>
         <article>
             <img src="app/public/images/tower_bridge.jpg" alt="word London" id="tower_bridge">
             <div>     
-                <h2 class="charm_p" id="">Ma petite histoire...</h2>
+                <h2 class="charm_p">Ma petite histoire...</h2>
                 <p class="cormorant_p story">Ayant été fâchée avec l’anglais durant toute ma scolarité, il a fallu que je m’expatrie dans 
                     le but d’apprivoiser la langue de Shakespeare, car, malgré neuf années d’apprentissage 
                     obligatoire, mis à part le nom des couleurs, les chiffres et quelques verbes irréguliers,
@@ -35,8 +38,8 @@ include_once 'layouts/header.php';
                     pour suivre des cours dans une école de langue à Sydney. Au programme : anglais sept heures
                    par jour, cinq jours par semaine !  Avide de plus de connaissances, j’ai ensuite fait des 
                    allers-retours entre l’université en France jusqu’à ma licence et le travail à Londres, 
-                   pour terminer par ma maîtrise en linguistique anglaise à <a href="https://www.sussex.ac.uk/" title="Page d'accueil de University of Sussex" class="uni_link">Sussex University</a> puis mon Master 
-                   à <a href="https://www.imperial.ac.uk/" title="Page d'accueil de Imperial College London" class="uni_link">Imperial College London</a> achevant une septième année en pays anglophone.</p>
+                   pour terminer par ma maîtrise en linguistique anglaise à <a href="https://www.sussex.ac.uk/" target="_blank" title="Page d'accueil de University of Sussex" class="uni_link">Sussex University</a> puis mon Master 
+                   à <a href="https://www.imperial.ac.uk/" target="_blank" title="Page d'accueil de Imperial College London" class="uni_link">Imperial College London</a> achevant une septième année en pays anglophone.</p>
                 <p class="cormorant_p story">J'ai ensuite été traductrice tout en donnant des cours 
                     d'anglais, puis suis partie en Ukraine y enseigner le français langue étrangère 
                     ainsi que l'anglais (essentiellement à des ingénieurs en informatique mais également 

@@ -13,18 +13,14 @@ include_once 'app/views/FRONT/layouts/header.php';
             </div>
             <div class="card_admin" id="card1">
                 <div class="card cadmin">
-                    <div class="card_front">
+                    <div class="card_front cadmin_front">
                         <p class="title_card">LESSON OF THE WEEK</p>
                     </div>
                     <div class="card_back cadmin_back">
                         <form method="post" action="indexAdmin.php?action=lessonWeek"  id="lod" enctype="multipart/form-data" class="flexcolumn">
                             <input type="text" class="newLesson"  id ="lesson_week1" name="title"  placeholder="lesson title" value="<?php if(isset($_POST['title'])) echo$_POST['title'] ?>">
                             <input type="text" class="newLesson" id ="lesson_week2" name="comment" placeholder="lesson comment" value="<?php if(isset($_POST['description'])) echo$_POST['description'] ?>">
-                            <span  class="form_error" id="bothRequired"></span>
-                            <div class="flex_row" id="browseFile">
-                                <input type="file" id="myfile" class="admin_buttons" name="myfile">
-                                <span id="showName" class="none"></span>
-                            </div>
+                                <input type="file" id="myfile" name="myfile">
                             <input type="submit" class="small_button admin_buttons"  id= "publish_button" value="Publish !">
                         </form>             
                     </div>
@@ -32,7 +28,7 @@ include_once 'app/views/FRONT/layouts/header.php';
             </div> 
             <div class="card_admin" id="card2">
                 <div class="card cadmin">
-                        <div class="card_front">
+                        <div class="card_front cadmin_front">
                                 <p class="title_card">MANAGE "LESSON OF THE WEEK"</p>
                         </div>
                         <div class="card_back cadmin_back">
