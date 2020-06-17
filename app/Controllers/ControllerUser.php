@@ -73,9 +73,9 @@ class ControllerUser
             //using email  and password inputs for an sql request  
             $loginData = $this->object->checkLogIn($email, $password); 
             //checking if user is an admin or student       
-            if($loginData === "user"){
+            if($loginData == "user"){
                 exit("user");
-            }elseif($loginData === "admin"){
+            }elseif($loginData == "admin"){
                 exit("admin");
             }
             else{

@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
  namespace GRH56\Models;
 
  class UserManager extends Manager
  {     
    // session sets session variables to use across class (DRY)
-  function session( $name, $surname, $email, $user, $status){
+  function session(string $name, string $surname, string $email, string $user, string $status){
       $_SESSION['name'] = $name;
       $_SESSION['surname'] = $surname;
       $_SESSION['email'] = $email;
@@ -13,16 +15,16 @@
       $_SESSION['status'] = $status;
    }
    //checkEmailExists  retrieves id if email exists in the DB.
-   public function checkEmailexists($email){
+   public function checkEmailexists(string $email) : array{
       $bdd = $this->dbConnect();
       $signUpData = $bdd->prepare('SELECT id_student FROM users WHERE email=?' );
       $signUpData->execute([$email]);
       $signUpData = $signUpData->fetchAll();
       return $signUpData;
- }
+ } 
 
    //checkLogIn check if passwords match for given email.
-   public function checkLogIn($email, $password){
+   public function checkLogIn(string $email, string $password) : string {
       $bdd = $this->dbConnect();
       $loginData = $bdd->prepare('SELECT * FROM users WHERE email=?');
       $loginData->execute([$email]);
@@ -37,15 +39,15 @@
                return "admin";
             }         
          }else{ 
-            return false;
+            return "false";
          }
       }else{
-         return($loginData);
+         return "false";
       }        
    }
 
-  //userRegistrer  inserts new user information into DB and sets SESSION variables.
-   public function userRegister($name, $surname, $email, $password){
+  //userRegister  inserts new user information into DB and sets SESSION variables.
+   public function userRegister(string $name, string $surname, string $email, string $password) : bool{
          $bdd = $this->dbConnect();
          $signUpData = $bdd->prepare('INSERT INTO users(username, surname, email, pass)  VALUES (?, ?, ?, ?)' );
          $signUpData->execute([$name, $surname, $email, $password]);
@@ -61,7 +63,7 @@
    }
 
    // userUpdate updates user information and rewrites SESSION variables.
-   public function userUpdate($nameUpdate, $surnameUpdate, $emailUpdate, $id){
+   public function userUpdate($nameUpdate, $surnameUpdate, $emailUpdate, $id) : bool{
         $bdd = $this->dbConnect();
         $updateData = $bdd->prepare('UPDATE users SET username = ?, surname = ?, email = ?  WHERE id_student = ? ');
         $updateData->execute([$nameUpdate, $surnameUpdate, $emailUpdate, $id]);
@@ -78,7 +80,7 @@
    }
    
    //userDelete delets user information from DB.
-   public function deleteUser($id){ 
+   public function deleteUser($id) : bool{ 
       $bdd = $this->dbConnect();
       $deleteUser = $bdd->prepare('DELETE FROM users WHERE id_student = ?');
       $deleteUser->execute([$id]); 
@@ -90,7 +92,7 @@
    }
    
    //ChangePassword updates user password in DB.
-   public function changePassword($newPasswordHash, $email){
+   public function changePassword($newPasswordHash, $email) : bool{
       $bdd = $this->dbConnect();
       $updatePass = $bdd->prepare('UPDATE users SET pass = ?  WHERE email = ? ');
       $updatePass->execute([$newPasswordHash, $email]); 
@@ -102,7 +104,7 @@
    }
 
    //latestLesson retrives lesson of the week with highest id 
-   function latestLesson(){
+   function latestLesson() : array{
       $bdd = $this->dbConnect();
       $lod = $bdd->prepare('SELECT * FROM lessonoftheweek ORDER BY id DESC LIMIT 1');
       $lod->execute();

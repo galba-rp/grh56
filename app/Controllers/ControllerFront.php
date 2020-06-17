@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1); 
+
 namespace GRH56\Controllers;
 
 class ControllerFront {   
@@ -20,7 +22,7 @@ class ControllerFront {
     
 
     // home is getting lessons ant testimonials information from the database to display on the front page.  
-    function home(){
+    function home() {
         $lessons = $this->object->displayLessons();
         $testimonials = $this->object->displayTestimonials();
        
