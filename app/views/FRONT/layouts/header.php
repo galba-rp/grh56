@@ -65,7 +65,7 @@
             <span class="form_error" id="wrongEmailPass"></span>
             <button type="button" class="button"  id="login_button">Se connecter</button>
             <p>Nouvel apprenant ?</p>
-            <a href="#" class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>
+            <a  class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>
         </form>
     </div>
     <div id="signin_box" class="modal_box modal_animate">

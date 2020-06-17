@@ -13,9 +13,8 @@ try{
         $controllerUser -> userRegistrationCheck();
     }
 }catch(Exception $e){
-    var_dump($e);
     require 'app/views/FRONT/error.php';
 }catch(Error $e){
-    var_dump($e);
+
     require 'app/views/FRONT/error.php';
 }
