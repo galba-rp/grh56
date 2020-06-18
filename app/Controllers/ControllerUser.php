@@ -3,7 +3,7 @@
 namespace GRH56\Controllers;
 
 class ControllerUser
-{  
+{
     private $object;
     public $errors;
     public $errorsPass;
@@ -16,39 +16,39 @@ class ControllerUser
             'surname' => '',
             'email' => '',
         ];
-        $this->errorsPass = [ 
+        $this->errorsPass = [
             'old_pass' => '',
             'new_pass' => ''
         ];
     }
-    function error(){
+    function error() {
         require 'app/views/FRONT/error.php';
     }
 
     // mainPage redirects to the homepage through controllerFront to load lessons from the database.
-    public function mainPage(){
+    function mainPage(){
         $controllerFront = new \GRH56\Controllers\ControllerFront();
-        header('Location: home');  
+        header('Location: home');
     }
     
     // userRegistrationCheck checking if email exists in the database.
-     function userRegistrationCheck(){
-        // filter removes tags/special characters from array.    
-       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            //using email  input for sql request  
-            $email = ($_POST['email']);
-            $signUpData = $this->object->checkEmailexists($email);
-             //checking response from model(if there is any data in the array). 
-            if(count($signUpData) > 0){
-                exit("Cette adresse e-mail est déjà utilisée ");
-            }else{
-                exit("ok");
-            }
+    function userRegistrationCheck(){
+        // filter removes tags/special characters from array.
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        //using email  input for sql request
+        $email = ($_POST['email']);
+        $signUpData = $this->object->checkEmailexists($email);
+        //checking response from model(if there is any data in the array).
+        if (count($signUpData) > 0){
+            exit("Cette adresse e-mail est déjà utilisée ");
+        } else {
+            exit("ok");
+        }
     }
 
     //registring new user(adding a row into Database).
-    function signUp(){   
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+    function signUp(){
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $name = $_POST['name'];
             $surname = $_POST['surname'];
             $email = $_POST['email'];
@@ -56,9 +56,9 @@ class ControllerUser
             
             //sending user details to the database.
             $userSignUp = $this->object->userRegister($name, $surname, $email, $password);
-            if($userSignUp == 'true'){
+            if ($userSignUp == 'true'){
                 exit('registred');
-            }else{
+            } else {
                 throw new \Exception("error");
             }
     }
@@ -73,27 +73,27 @@ class ControllerUser
             //using email  and password inputs for an sql request  
             $loginData = $this->object->checkLogIn($email, $password); 
             //checking if user is an admin or student       
-            if($loginData == "user"){
+            if ($loginData == "user"){
                 exit("user");
-            }elseif($loginData == "admin"){
+            } elseif ($loginData == "admin"){
                 exit("admin");
             }
-            else{
+            else {
                 exit('Votre identifiant ou mot de passe est incorrect.');
             }
-        }        
+        }
     }
 
     //if checkUser sends true, then gooing to student page or admin page depending on $_SESSION['status].
-    function logedIn(){  
-        if(isset($_SESSION['name']) && $_SESSION['status'] == '0'){
+    function logedIn(){
+        if (isset($_SESSION['name']) && $_SESSION['status'] == '0'){
             $lod = $this->object->latestLesson();
             require 'app/views/STUDENT/student.php';
-        }elseif(isset($_SESSION['name']) && $_SESSION['status'] == '1'){
+        } elseif (isset($_SESSION['name']) && $_SESSION['status'] == '1'){
             header('Location: admin');
-        }else{
+        } else {
             $this->mainPage();
-        } 
+        }
     }
     
     //logOut destroying session on logout.
@@ -107,9 +107,9 @@ class ControllerUser
     function account(){
         $errors = $this->errors;
         $errorsPass =$this->errorsPass;
-        if(isset($_SESSION['name'])){
+        if (isset($_SESSION['name'])){
             require 'app/views/STUDENT/account.php';
-        }else{
+        } else {
             $this->mainPage();
         }
     }
@@ -123,34 +123,34 @@ class ControllerUser
         $id =  $_SESSION['user'];
        
         $errors = $this->errors;
-        if(empty($nameUpdate)){
+        if (empty($nameUpdate)){
            $errors['name'] = 'Prenom manquant !';
             $_SESSION['name'] = '';
-        }elseif(!preg_match("/(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/",$nameUpdate)) {
+        } elseif (!preg_match("/(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/", $nameUpdate)) {
             $errors['name'] = "Prenom n'est pas conforme";
             $_SESSION['name'] = '';
         }
-        if(empty($surnameUpdate)){
+        if (empty($surnameUpdate)){
             $errors['surname'] = 'Nom manquant !';
             $_SESSION['surname'] = '';
-        }elseif(!preg_match("/(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/",$surnameUpdate)) {
+        } elseif (!preg_match("/(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/", $surnameUpdate)) {
             $errors['surname'] = "Nom n'est pas conforme";
             $_SESSION['surname'] = '';
         }
-        if(empty($emailUpdate)){
+        if (empty($emailUpdate)){
             $errors['email'] = 'Email manquant !';
             $_SESSION['email'] = '';
-        }elseif(!filter_var($emailUpdate, FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($emailUpdate, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = "Email n'est pas conforme !";
             $_SESSION['email'] = '';
         }
-        if(empty($errors['name']) && empty($errors['surname']) && empty($errors['email'])){
-            $userDataUpdate = $this->object->userUpdate($nameUpdate, $surnameUpdate, $emailUpdate, $id); 
+        if (empty($errors['name']) && empty($errors['surname']) && empty($errors['email'])){
+            $userDataUpdate = $this->object->userUpdate($nameUpdate, $surnameUpdate, $emailUpdate, $id);
             
-            if($userDataUpdate == 'true'){   
+            if ($userDataUpdate == 'true'){   
                 $show = "show";
                 $message = "Le changement a bien été pris en compte !";
-                if($_SESSION['status'] == 1){
+                if ($_SESSION['status'] == 1){
                     require 'app/views/BACK/admin.php';
                 } else {
                     require 'app/views/STUDENT/student.php';
@@ -160,13 +160,13 @@ class ControllerUser
             }
         } else {
             $errorsPass =$this->errorsPass;
-            if(isset($_SESSION['name'])){
+            if (isset($_SESSION['name'])){
                 require 'app/views/STUDENT/account.php';
             } else {
                 $this->mainPage();
             }
         }
-    } 
+    }
 
     // function to change student password (checking if old password corresponds to db data and only than changing to new password)
     function changePass(){
@@ -178,30 +178,30 @@ class ControllerUser
         $errorsPass =$this->errorsPass;
         $errors = $this->errors;
 
-        if(empty($password)){
+        if (empty($password)){
             $errorsPass['old_pass'] = 'Mot de passe manquant !';
         } else {
             $checkPassword = $this->object->checkLogIn($email, $password);
-            if($checkPassword == true){
+            if ($checkPassword == true){
                 $errorsPass['old_pass'] = '';
             } else {
                 $errorsPass['old_pass'] = 'Mot de passe incorrect!';
-            }      
+            }
         }
 
-        if(empty($newPass)){
+        if (empty($newPass)){
             $errorsPass['new_pass'] = 'Mot de passe manquant !';
-        }elseif(!preg_match('/^(?=.*\d)(?=.*[a-zà-öø-ÿ])(?=.*[A-Z]).{6,}$/', $newPass)){   
+        } elseif (!preg_match('/^(?=.*\d)(?=.*[a-zà-öø-ÿ])(?=.*[A-Z]).{6,}$/', $newPass)){   
             $errorsPass['new_pass'] = "Mot de passe n'est pas conforme !";   
         }
 
-        if(empty($errorsPass['old_pass']) && empty($errorsPass['new_pass'])){                
+        if (empty($errorsPass['old_pass']) && empty($errorsPass['new_pass'])){
             $newPassword = $this->object->changePassword($newPasswordHash, $email);
-                if($newPassword == true){
+                if ($newPassword == true){
                     $show = "show";
                     $message = "Le changement a bien été pris en compte !";
 
-                    if($_SESSION['status'] == 1){
+                    if ($_SESSION['status'] == 1){
                         require 'app/views/BACK/admin.php';
                     } else {
                         require 'app/views/STUDENT/student.php';
@@ -210,7 +210,7 @@ class ControllerUser
                     throw new \Exception("update failed");
                 }
         } else {
-            if(isset($_SESSION['name'])){
+            if (isset($_SESSION['name'])){
                 require 'app/views/STUDENT/account.php';
             } else {
                 $this->mainPage();
@@ -233,7 +233,7 @@ class ControllerUser
             } else {
                 throw new \Exception("deleteUser failed");
             }
-        }else{
+        }else {
             $checkHere = "Veuillez cocher ici !";
             require 'app/views/STUDENT/account.php';
         }
@@ -246,8 +246,5 @@ class ControllerUser
         } else {
            $this->mainPage();
         }
-    }
-
-
-      
+    }   
 }  
