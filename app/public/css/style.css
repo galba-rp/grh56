@@ -209,7 +209,7 @@ main {
     width: 500px;
     padding: 15px 0;
     position: absolute;
-    top: 40vh;
+    top: 50vh;
     transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
@@ -1213,8 +1213,6 @@ footer {
     }
 }
 
-
-
 @media only screen and (max-width: 768px) {
 
     /*HEADER*/
@@ -1259,7 +1257,6 @@ footer {
 
     .modal_box {
         width: 90%;
-        top: 8%;
     }
 
     /*MAIN SECTION*/

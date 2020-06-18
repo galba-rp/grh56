@@ -4,7 +4,7 @@ let name = document.getElementById("sign_up_name");
 let surname = document.getElementById("sign_up_surname");
 let emailUp = document.getElementById("sign_up_email");
 let passwordUp = document.getElementById("sign_up_password");
-let confirmPassword = document.getElementById("sign_up_password_ confirm");
+let confirmPassword = document.getElementById("sign_up_password_confirm");
 
 //  fields to insert  error messages
 let nameRequired = document.getElementById("nameRequired");
@@ -28,6 +28,7 @@ let formFieldsSignUpRequired = [nameRequired, surnameRequired, emailUpRequired, 
 let formFieldsNamesSigUp = ["Prenom", "Nom", "Email", "Mot de passe"];
 
 
+
 //reset error mesages on submit
 formValidSignUp.addEventListener("click", function resetMessage() {
     for (let i = 0; i < formFieldsNamesSigUp.length; i++) {
@@ -45,19 +46,22 @@ formValidSignUp.addEventListener("click", function validate(event) {
     // array of regex validation results
     let formRegExpUp = [nameResult, surnameResult, emailUpResult, passwordUpResult];
 
+    let errors = 0;
     // checkind  empty form fields  and input formats
     for (let i = 0; i < formFieldsNamesSigUp.length; i++) {
         if (formFieldsSignUp[i].value === "") {
             formFieldsSignUpRequired[i].textContent = formFieldsNamesSigUp[i] + " manquant";
-            event.stopImmediatePropagation();
+            error = 1;
 
         } else if (formRegExpUp[i] == false) {
             formFieldsSignUpRequired[i].textContent = formFieldsNamesSigUp[i] + " n'est pas conforme"
-            event.stopImmediatePropagation();
+            error = 1;
         }
     }
-    if (passwordUp.value != confirmPassword.value) {
+    if (passwordUp.value != confirmPassword.value || errors == 1) {
         passwordUpConfirmRequired.textContent = "La confirmation du mot de passe ne correspond pas !"
-        click.stopImmediatePropagation();
+    } else {
+        registrationCheck()
+
     }
 });
