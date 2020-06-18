@@ -6,6 +6,8 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 * PHP
 * Javascript
 * jQuery
+* CSS
+* HTML
 
 ## Based on
 * MVC design pattern
@@ -20,7 +22,7 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 
 ## Testing the website
 * Clone the repo
-* On localhost comment line
+* Import the DB
 * User account: 
     - Name: student@gmail.com
     - Password: Student0
