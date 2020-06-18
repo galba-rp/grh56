@@ -2,8 +2,6 @@
 
 namespace GRH56\Controllers;
 
-
-
 class ControllerAdmin
 {   
     private $object;
@@ -24,7 +22,7 @@ class ControllerAdmin
         require 'app/views/BACK/lessons.php';
     }
 
-    // lessonWeek creates lesson of the Week 
+    // lessonWeek creates lesson of the Week
     function lessonWeek(){
         $show =" ";
         $message = " ";
@@ -36,12 +34,12 @@ class ControllerAdmin
         $upload_dir = "app/public/videos/";
         $upload_file = $upload_dir . basename($filename);
         $upload = 1; //initial value
-        $fileType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION));
+        $fileType = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));
 
-        if(empty($title)){
+        if (empty($title)){
             $errors['lesson'] = "Lesson's title is missing !";
         }
-        if(empty($comment)){
+        if (empty($comment)){
             $errors['comment'] = "Comment is missing !";
         }
 
@@ -49,7 +47,7 @@ class ControllerAdmin
         if (file_exists($upload_file)) {
             $errors['video'] = "File already exists.";
             $upload = 0;
-        } 
+        }
       
         // limiting file size.
         if ($_FILES["myfile"]["size"] > 25000000) {
@@ -58,28 +56,26 @@ class ControllerAdmin
         }
     
         // limiting to MP4 format only.
-        if($fileType != "mp4") {
+        if ($fileType != "mp4") {
             $errors['video'] = "Only MP4 files are allowed.";
             $upload = 0;
-        } 
+        }
         if ($upload == 0) {
             $errors['not uploaded'] = "An error has occured, please try again";
         }
-        if(!empty($errors['video']) || !empty($errors['lesson']) || !empty($errors['comment']) || !empty($errors['not uploaded'])){
+        if (!empty($errors['video']) || !empty($errors['lesson']) || !empty($errors['comment']) || !empty($errors['not uploaded'])){
             require 'app/views/BACK/admin.php';
-        }elseif (empty($errors['video']) && empty($errors['lesson']) && empty($errors['comment']) && empty($errors['not uploaded'])) {
+        } elseif (empty($errors['video']) && empty($errors['lesson']) && empty($errors['comment']) && empty($errors['not uploaded'])) {
             if (move_uploaded_file($_FILES["myfile"]["tmp_name"], $upload_file)){
-                
                 $lessonWeek = $this->object->lessonOfTheWeek($title, $comment, $upload_file);
                     if ($lessonWeek) {
                         $show = "show";
                         $message = "Lesson successfully created!";
                         require 'app/views/BACK/admin.php';
-                        //header("Location: indexAdmin.php?action=allLessons");
                     } else {
                         throw new \Exception("lessonWeek creatoion failed");
                     }
-            } else{
+            } else {
                 throw new \Exception("lessonWeek failed");
             }
         }
@@ -103,24 +99,24 @@ class ControllerAdmin
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($_POST);
 
-        if(empty($_POST['update_title'])){
+        if (empty($_POST['update_title'])){
             $errors['lesson'] = "Lesson's title is missing !";
         }
-        if(empty($_POST['update_comment'])){
+        if (empty($_POST['update_comment'])){
             $errors['comment'] = "Comment is missing !";
-        } 
+        }
         if (!empty($errors['lesson']) || !empty($errors['comment'])){
             require 'app/views/BACK/lessons.php';
-        }else{
+        } else {
             $lessonUpdate = $this->object->lessonWeekUpdate($update_title, $update_comment, $id);
             
             if ($lessonUpdate){
                 $show = "show";
                 $message = "Lesson has beeen updated!";
                 require 'app/views/BACK/admin.php';
-           }else{
+           } else {
                 throw new \Exception("updateWeekLesson failed");
-           }
+            }
         }
     }
 
@@ -136,7 +132,7 @@ class ControllerAdmin
             $show = "show";
             $message = "Lesson has been deleted!";
             require 'app/views/BACK/admin.php';
-        }else{
+        } else {
             throw new \Exception("deletWeekLesson failed");
         }
     }
