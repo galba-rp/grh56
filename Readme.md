@@ -20,7 +20,13 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 
 ## Testing the website
 * Clone the repo
-* On localhost comment line 
+* On localhost comment line
+* User account: 
+    - Name: student@gmail.com
+    - Password: Student0
+* Admin account:
+    - grh56@gmail.com  
+    - Password: Admin1
 
 ## TO DO
 *  - Set environmental variables for DB access.
