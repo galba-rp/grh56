@@ -2,18 +2,19 @@
 
 declare(strict_types = 1);
 
- namespace GRH56\Models;
+namespace GRH56\Models;
 
- class UserManager extends Manager
- {     
+class UserManager extends Manager
+{     
    // session sets session variables to use across class (DRY)
-  function session(string $name, string $surname, string $email, string $user, string $status){
+   function session(string $name, string $surname, string $email, string $user, string $status){
       $_SESSION['name'] = $name;
       $_SESSION['surname'] = $surname;
       $_SESSION['email'] = $email;
       $_SESSION['user'] = $user;
       $_SESSION['status'] = $status;
    }
+
    //checkEmailExists  retrieves id if email exists in the DB.
    public function checkEmailexists(string $email) : array{
       $bdd = $this->dbConnect();
@@ -21,7 +22,7 @@ declare(strict_types = 1);
       $signUpData->execute([$email]);
       $signUpData = $signUpData->fetchAll();
       return $signUpData;
- } 
+   }
 
    //checkLogIn check if passwords match for given email.
    public function checkLogIn(string $email, string $password) : string {
@@ -30,20 +31,20 @@ declare(strict_types = 1);
       $loginData->execute([$email]);
       $loginData = $loginData->fetch();
       if ($loginData){
-         if( password_verify($password,$loginData['pass'])){
+         if ( password_verify($password,$loginData['pass'])){
             $this->session($loginData['username'], $loginData['surname'], $loginData['email'], $loginData['id_student'], $loginData['id_status']);
             //return based on user status
-            if($loginData['id_status'] === "0"){
+            if ($loginData['id_status'] === "0"){
                return "user";
-            }else{
+            } else {
                return "admin";
-            }         
-         }else{ 
+            }
+         } else { 
             return "false";
          }
-      }else{
+      } else {
          return "false";
-      }        
+      }
    }
 
   //userRegister  inserts new user information into DB and sets SESSION variables.
@@ -51,13 +52,13 @@ declare(strict_types = 1);
          $bdd = $this->dbConnect();
          $signUpData = $bdd->prepare('INSERT INTO users(username, surname, email, pass)  VALUES (?, ?, ?, ?)' );
          $signUpData->execute([$name, $surname, $email, $password]);
-         if($signUpData){
+         if ($signUpData){
             $getUserData = $bdd->prepare('SELECT * FROM users WHERE email=?');
             $getUserData->execute([$email]);
             $getUserData = $getUserData-> fetch();           
             $this->session($getUserData['username'], $getUserData['surname'], $getUserData['email'], $getUserData['id_student'], $getUserData['id_status']);
             return true;
-         }else{
+         } else {
             return false;
          }
    }
@@ -71,10 +72,10 @@ declare(strict_types = 1);
         $getUserData = $bdd->prepare('SELECT * FROM users WHERE id_student=?');
         $getUserData->execute([$id]);
         $getUserData = $getUserData-> fetch();
-        if($updateData){
+        if ($updateData){
            $this->session($getUserData['username'], $getUserData['surname'], $getUserData['email'], $getUserData['id_student'], $getUserData['id_status']);
            return true;
-        }else{
+        } else {
            return false;
         }
    }
@@ -84,9 +85,9 @@ declare(strict_types = 1);
       $bdd = $this->dbConnect();
       $deleteUser = $bdd->prepare('DELETE FROM users WHERE id_student = ?');
       $deleteUser->execute([$id]); 
-      if($deleteUser){
+      if ($deleteUser){
          return true;
-      }else{
+      } else {
          return false;
       }
    }
@@ -96,9 +97,9 @@ declare(strict_types = 1);
       $bdd = $this->dbConnect();
       $updatePass = $bdd->prepare('UPDATE users SET pass = ?  WHERE email = ? ');
       $updatePass->execute([$newPasswordHash, $email]); 
-      if($updatePass){
+      if ($updatePass){
          return true;
-      }else{
+      } else {
          return false;
       }
    }
@@ -110,5 +111,5 @@ declare(strict_types = 1);
       $lod->execute();
       $lod = $lod->fetch();
       return $lod;
-  } 
+   } 
 }
