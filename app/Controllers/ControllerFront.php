@@ -1,14 +1,13 @@
 <?php
 
-declare(strict_types = 1); 
-
 namespace GRH56\Controllers;
 
-class ControllerFront {   
+class ControllerFront 
+{   
     private $object;
     public $errorsContact;
 
-    // connecting to the model and creating an array for errors display    
+    // connecting to the model and creating an array for errors display.
     public function __construct(){
         $this->object = new \GRH56\Models\FrontManager();
         $this->errorsContact = [
@@ -21,7 +20,7 @@ class ControllerFront {
     }
     
 
-    // home is getting lessons ant testimonials information from the database to display on the front page.  
+    // home is getting lessons ant testimonials information from the database to display on the front page.
     function home() {
         $lessons = $this->object->displayLessons();
         $testimonials = $this->object->displayTestimonials();
@@ -46,36 +45,35 @@ class ControllerFront {
     }
     //contact form verification and message sending
     function sendMessage(){
-        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($_POST);
 
         // switcing from key=>value array to indexed array for errors handling.
-        $inedexedPost = array_values($_POST);      
+        $inedexedPost = array_values($_POST);
         $errorsContact = $this->errorsContact;
         
-        for($i= 0; $i < count($errorsContact); $i++){
+        for ($i= 0; $i < count($errorsContact); $i++){
             if (empty($inedexedPost[$i])){
                 $errorsContact[$i] = "Veuillez remplir ce champ !";
             }
         }
-        if(!filter_var($inedexedPost['2'], FILTER_VALIDATE_EMAIL)){
+        if (!filter_var($inedexedPost['2'], FILTER_VALIDATE_EMAIL)){
             $errorsContact['2'] = "L'adresse e-mail n'est pas valide !";
         }
 
         // checking if there are any errors in $errorsContact
-        for($i= 0; $i < count($errorsContact); $i++){
+        for ($i= 0; $i < count($errorsContact); $i++){
             $errors;
             if (!empty($errorsContact[$i])){
                 $errors++;
             }
         }
-        if($errors == 0){
+        if ($errors == 0){
             $to = 'galba.rp@gmail.com';
             $subject  = $_POST['contact_subject'];
             $message =  'From : ' .  $contact_name ." " . $contact_surname . "\r\n" . $contact_email . "\r\n" . $contact_message . ";  "; 
-            $headers = 'MIME-Version: 1.0';           
+            $headers = 'MIME-Version: 1.0';
             $headers .= 'Content-type: text/HTML; charset=utf-8';
-
 
             $sent = mail($to, $subject, $message, $headers);
            
@@ -88,12 +86,11 @@ class ControllerFront {
                 $show = "show";
                 $message = "Merci, votre message à été envoyé  !";
                 require 'app/views/FRONT/contact.php';;
-            }
-            else{
+            } else {
                 require 'app/views/FRONT/error.php';
-            } 
-        }else{
+            }
+        } else {
             require 'app/views/FRONT/contact.php';
         }
     }
-}  
+}
