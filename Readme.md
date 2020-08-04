@@ -29,6 +29,8 @@ GRH56 is an apprenteship project to create a personal website for an english cou
 * Admin account:
     - grh56@gmail.com  
     - Password: Admin1
+    
+## http://www.greta-bretagne-sud.fr/stagiaires/yaroslav-hontar/GRH56/about
 
 ## TO DO
 *  - Set environmental variables for DB access.
