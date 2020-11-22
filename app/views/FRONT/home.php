@@ -3,22 +3,9 @@ include 'layouts/head.php';
 include_once 'layouts/header.php';
 ?>
 <main>
-    <article class="normal_width">
-        <div class="top_article fade">
-            <img src="app/public/images/hand.png" alt="hand holding a pen">
-            <h1>Formation en anglais éligible au CPF</h1>
-            <svg width="250" height="180">
-                <rect x="0" y="20" rx="20" ry="20" width="200" height="40" id="svg_rect"
-                    style="fill:white;stroke:black;stroke-width:1;opacity:0.5" />
-                <a href="https://www.moncompteformation.gouv.fr" target="_blank">
-                    <text x="30" y="45" fill="#01385C" id="svg_text" class="svg_text">EN SAVOIR PLUS !</text></a>
-            </svg>
-        </div>
-    </article>
+   
     <section id="lessons_section" class="normal_width fade">
-        <p class="pagedivider"></p>
-        <div id="plugin"> The secret of getting ahead is getting started</div>
-        <p class="pagedivider"></p>
+        
         <div class="lessons">
             <?php foreach($lessons as $lesson): ?>
             <div class="lesson">
@@ -38,6 +25,22 @@ include_once 'layouts/header.php';
             <?php endforeach ?>
             </div>
     </section>
+    
+    <article class="normal_width">
+        <div class="top_article fade">
+        <p class="pagedivider fade"></p>
+        <div id="plugin" > The secret of getting ahead is getting started</div>
+        <p class="pagedivider"></p>
+            <img src="app/public/images/hand.png" alt="hand holding a pen">
+            <h1>Formation en anglais éligible au CPF</h1>
+            <svg width="250" height="180">
+                <rect x="0" y="20" rx="20" ry="20" width="200" height="40" id="svg_rect"
+                    style="fill:white;stroke:black;stroke-width:1;opacity:0.5" />
+                <a href="https://www.moncompteformation.gouv.fr" target="_blank">
+                    <text x="30" y="45" fill="#01385C" id="svg_text" class="svg_text">EN SAVOIR PLUS !</text></a>
+            </svg>
+        </div>
+    </article>
     <section class="normal_width fade" id="clients">
         <div class="pagedivider"></div>
         <h2 id="companies">Les entreprises qui m’ont fait confiance</h2>

@@ -15,6 +15,5 @@ try{
 }catch(Exception $e){
     require 'app/views/FRONT/error.php';
 }catch(Error $e){
-
     require 'app/views/FRONT/error.php';
 }
