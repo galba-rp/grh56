@@ -20,8 +20,12 @@ try {
             $controllerFront -> contactForm();
         } elseif ($_GET['action'] == 'about'){
             $controllerFront -> about();
-        } elseif ($_GET['action'] == 'courses'){
-            $controllerFront -> courses();
+        } elseif ($_GET['action'] == 'horeca'){
+            $controllerFront -> horeca();            
+        } elseif ($_GET['action'] == 'generalEnglish'){
+            $controllerFront -> generalEnglish();         
+        } elseif ($_GET['action'] == 'bussinesEnglish'){
+            $controllerFront ->bussinesEnglish();         
         } elseif ($_GET['action'] == 'home'){
             $controllerFront -> home();
         } elseif ($_GET['action'] == 'logout'){
@@ -46,6 +50,8 @@ try {
             $controllerUser -> admin();
         } elseif ($_GET['action'] == 'lost_password'){
             $controllerUser -> lostPassword();
+        } elseif ($_GET['action'] == 'conditions'){
+            $controllerFront -> generalConditions();
         }
     } else {
         $controllerFront -> home();

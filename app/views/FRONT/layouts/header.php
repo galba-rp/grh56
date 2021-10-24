@@ -44,7 +44,14 @@
                     ?>
                 <li class="<?php echo($show1)?>"><a href="home" class="menu_item" id="home">ACCUEIL</a></li>
                 <li class="<?php echo($show1)?>"><a href="about" class="menu_item" id="about">&#192; PROPOS</a></li>
-                <li class="<?php echo($show1)?>"><a href="courses" class="menu_item" id="courses">LES COURS</a></li>
+                <li class="<?php echo($show1)?> dropdown">
+                    <div class="menu_item" id="courses">LES COURS</div> 
+                        <div class="dropdown-content" id="drop">
+                            <a href="generalEnglish">Anglais général</a>
+                            <a href="bussinesEnglish">Anglais professionel</a>
+                            <a href="horeca">Anglais de la restauration</a>
+                        </div>
+                </li>
                 <li class="<?php echo($show1)?>"><a href="contact" class="menu_item" id="contact">CONTACT</a></li>
                 <li class="<?php echo($show5)?>"><a href="student" class="menu_item" id="student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
                 <li class="<?php echo($show6)?>"><a href="account" class="menu_item" id="account">MON COMPTE</a></li>
@@ -64,8 +71,6 @@
             <span class="form_error" id="passwordRequired"></span>
             <span class="form_error" id="wrongEmailPass"></span>
             <button type="button" class="button"  id="login_button">Se connecter</button>
-            <p>Nouvel apprenant ?</p>
-            <a  class="modal_links" id="create_account" title="Cliquez ici pour créer votre compte">Créer un compte</a>
         </form>
     </div>
     <div id="signin_box" class="modal_box modal_animate">

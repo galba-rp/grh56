@@ -11,7 +11,7 @@ class FrontManager extends Manager
     public function displayLessons() : array{
          //conncting to dtabase through dbConnect() from class Manager
         $bdd = $this->dbConnect();
-        $lessons = $bdd->prepare('SELECT lessons.title, lessons.short, lessons.description, images.image_path FROM lessons INNER JOIN images ON lessons.lesson_id = images.connect_id');
+        $lessons = $bdd->prepare('SELECT lessons.title, lessons.short, lessons.description, lessons.page,  images.image_path FROM lessons INNER JOIN images ON lessons.lesson_id = images.connect_id');
         $lessons->execute(array());
         $lessons = $lessons->fetchAll();
 

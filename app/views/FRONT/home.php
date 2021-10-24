@@ -3,9 +3,14 @@ include 'layouts/head.php';
 include_once 'layouts/header.php';
 ?>
 <main>
-   
+    <article class="normal_width">
+        <div class="top_article fade">
+            <p class="pagedivider"></p> 
+            <div id="plugin" > The secret of getting ahead is getting started</div>
+            <p class="pagedivider"></p> 
+        </div>
+    </article>
     <section id="lessons_section" class="normal_width fade">
-        
         <div class="lessons">
             <?php foreach($lessons as $lesson): ?>
             <div class="lesson">
@@ -18,31 +23,43 @@ include_once 'layouts/header.php';
                     </div>
                     <div class="card_back">
                         <p><?= $lesson['description']?></p>
-                        <a href="courses" title="Découvrez nos cours">EN SAVOIR PLUS</a>
+                        <a href="<?= $lesson['page']?>" title="Découvrez nos cours">EN SAVOIR PLUS</a>
                     </div>
                 </div>
             </div>
             <?php endforeach ?>
             </div>
+            <h3 class="trasparent-dark"><a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/">Formation en anglais éligible au CPF</a></h3>
+            
     </section>
-    
-    <article class="normal_width">
-        <div class="top_article fade">
-        <p class="pagedivider fade"></p>
-        <div id="plugin" > The secret of getting ahead is getting started</div>
-        <p class="pagedivider"></p>
-            <img src="app/public/images/hand.png" alt="hand holding a pen">
-            <h1>Formation en anglais éligible au CPF</h1>
-            <svg width="250" height="180">
-                <rect x="0" y="20" rx="20" ry="20" width="200" height="40" id="svg_rect"
-                    style="fill:white;stroke:black;stroke-width:1;opacity:0.5" />
-                <a href="https://www.moncompteformation.gouv.fr" target="_blank">
-                    <text x="30" y="45" fill="#01385C" id="svg_text" class="svg_text">EN SAVOIR PLUS !</text></a>
-            </svg>
+    <section  class="separator fade">
+        <div class='normal_width overview'>
+        <div >
+            <h1>Types de formations</h1>
+            <p>Cours particuliers d'anglais pour tout public, à tout niveau, comprenant l’accompagnement pour passer un examen (TOEFL, TOEIC, IELTS/FCE-CPE, Linguaskill (anciennement BULATS) et autres), anglais des affaires, de la restauration, de l’hôtellerie, ou possibilité d’une autre spécialité (à discuter) aussi bien pour devenir à l'aise à l'orale que pour savoir lire et s'exprimer à l'écrit. </p>
+                <p>Les formations peuvent être suivies en groupe ou être individualisées. 
+                Possibilité de personnaliser les formations de groupe également (au sein d’une société, si les personnes ont un thème commun) à partir de 4 participants.</p> 
+                <h2>Plusieurs choix possibles :</h2>
+                <ul>
+                    <li> en présentiel (je me déplace en entreprise sous réserve d’une salle disponible)</li>
+                    <li> à distance (visioconférence, sous réserve d’une bonne connexion Internet)</li>
+                    <li> mixte </li>
+                </ul>
         </div>
-    </article>
+        <div>
+            <h1>Pourquoi choisir notre formation :</h1>
+            <ul>
+                <li> Formatrice <b>qualifiée</b> et <b>expérimentée</b> (plus de 10 ans d’expérience avec des publics très variés) ;</li>
+                <li> <b></b>Personnalisation</b> des cours et <b>adaptabilité</b> du contenu à vos besoins ;</li>
+                <li> Accent mis sur la communication orale (prononciation, phonétique, intonation) ; </li>
+                <li> Cours effectués dans la <b>bonne humeur</b> (si, si, on peut sérieusement améliorer son anglais dans la bonne humeur :D) ; </li>
+                <li> <b>Plateforme d’apprentissage en e-learning</b> disponible pour s’entraîner en dehors des cours (grammaire, vocabulaire, anglais spécifique (des <b>affaires</b>, de la <b>restauration</b> (salle et cuisine), de <b>l’hôtellerie</b>, anglais <b>technique</b>, pour <b>l’office du tourisme, préparation aux examens</b>, etc.), vidéos avec préparations et questions après visionnage, le tout élaboré avec différents accents de personnes <b>anglaises natives</b>).</li>
+            </ul>
+        </div>
+    </div>
+    </section>
     <section class="normal_width fade" id="clients">
-        <div class="pagedivider"></div>
+      
         <h2 id="companies">Les entreprises qui m’ont fait confiance</h2>
         <div class="flex_row" id="comp_base">
             <a href="https://www.opcalia.com/" target="_blank" title="Cliquez-ici pour visiter la site web de Opcalia"><img src="app/public/images/akto_s.png" alt="AKTO logo"></a>
@@ -69,6 +86,12 @@ include_once 'layouts/header.php';
             </div>
             <?php endforeach ?>
         </div>
+        <div class="pagedivider"></div>
+        <div class="charts">
+        <canvas  id="evaluationChart" style="width:100%;max-width:500px; max-height:250px;margin-top: 100px;"></canvas>
+        <canvas  id="resultsChart" style="width:100%;max-width:500px; max-height:250px;margin-top: 100px;"></canvas>
+        <p class="center">Taux de retour des questionnaires: 100%. Nombre de questionnaires envoyés: 1</p>
+        </div>    
     </section>
 </main>
 <?php include 'layouts/footer.php' ?>

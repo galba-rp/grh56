@@ -19,4 +19,12 @@ $(document).ready(function () {
         $("#signin_box").hide();
         $("#forgot_pass").hide();
     });
+    // $("#moreInfoGeneral").click(function () {
+    //     $("#moreInfoGeneral").show();
+    // });
+    // $(".moreInfo").hideModal(() => {
+    //     $("#modal_box").hide();
+    // })
+
+
 });
