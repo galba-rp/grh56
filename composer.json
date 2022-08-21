@@ -10,5 +10,7 @@
             "GRH56\\": "./app/"
         }
     },
-    "require": {}
+    "require": {
+        "mpdf/mpdf": "^8.1"
+    }
 }

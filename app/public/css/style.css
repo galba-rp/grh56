@@ -100,6 +100,9 @@ main {
     margin: auto;
 
 }
+.w-full {
+    width: 100%;
+}
 
 .logo {
     height: auto;
@@ -185,6 +188,10 @@ main {
 
 .dropdown-content a:hover {
     background-color: rgba(112, 159, 190, 0.962);
+}
+
+.block {
+    display: inline-block;
 }
 
 
@@ -1312,6 +1319,108 @@ footer {
     -webkit-animation: animateopacity 1.4s;
 }
 
+ /* Questionnaire page*/
+#question_section {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+ .dates {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.row-darkblue {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.row-lightblue {
+    background-color: rgb(69, 146, 248);
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.grid1 {
+    display: flex;
+    grid-template-columns: 75% 25%;
+}
+
+.grid2 {
+    grid-template-columns: 75% 25%;
+
+}
+
+.mr-lg {
+    margin-right: 24px;
+}
+
+.mr-md {
+    margin-right: 12px;
+}
+#question td{
+font-size: 1rem;
+}
+
+.table_b, .table_b th,.table_b td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+
+.table2 td {
+   padding: 10px;
+}
+.table2 td:nth-child(n+2) {
+    text-align: center;
+}
+
+#table {
+    width: 100%;
+}
+
+.table2 th {
+    background-color: lightgrey;
+}
+
+.mt-lg {
+    margin-top: 6rem;
+}
+
+.mt-sm {
+    margin-top: 0.75rem;
+}
+
+.mt-xs {
+    margin-top: 12px;
+}
+
+.title_question {
+font-size: 20px;
+font-weight: bold;
+}
+
+.date {
+    margin-right: 2rem;
+    justify-content:end;
+}
+
+.pr-sm {
+    padding-right: 8px;;
+}
+
+input[type="date"] { 
+    color: rgb(40, 88, 179);
+  }
+
 @-webkit-keyframes animateopacity {
     0% {
         opacity: 0;
@@ -1331,7 +1440,7 @@ footer {
         opacity: 1;
     }
 }
-
+Mentions légales et données personnelles  Mentions légales et données personnelles 
 /* ---MEDIA QUERIES --*/
 @media (max-width: 1199px) {
 
