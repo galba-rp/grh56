@@ -66,11 +66,13 @@ class ControllerFront
     }
     function sendQuestionnaire()
     {
+        // // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        // // extract($_POST);
         // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        // extract($_POST);
-        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        // extract($_POST);
-        print_r($_POST);
+        // // extract($_POST);
+        // print_r($_POST);
+
+       require 'app\views\FRONT\makepdf.php';
     }
 
     //contact form verification and message sending

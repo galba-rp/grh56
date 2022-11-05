@@ -26,7 +26,7 @@ include_once 'app/views/FRONT/layouts/header.php';
                 </div>
                 <div class="dates">
                     <div>
-                        <label for="course_start_date" class="label">Qui s’est déroulée du: </label>
+                        <label for="course_start_date" class="label">Qui s’est déroulée du :</label>
                         <input type="date" name="course_start_date" class="contact_field" id="course_start_date" value=<?php if (isset($_POST['course_start_date'])) echo $_POST['course_start_date'] ?>>
                         <span class="form_error"><?= $errorsContact[2] ?></span>
                     </div>
@@ -70,12 +70,12 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 </td>
                                 <td class="flex_row items-center">
                                     <div class="flex_row">
-                                        <input type="radio" id="renforcer_vos_compétences_renforcer_oui" name="renforcer_vos_compétences_renforcer" value="Oui">
-                                          <label for="renforcer_vos_compétences_renforcer_oui" class="mr-lg">Oui</label>
+                                        <input type="radio" id="renforcer_vos_compétences_oui" name="renforcer_vos_compétences" value="Oui">
+                                          <label for="renforcer_vos_compétences_oui" class="mr-lg">Oui</label>
                                     </div>
                                     <div class="flex_row">
-                                        <input type="radio" id="renforcer_vos_compétences_renforcer_no" name="renforcer_vos_compétences_renforcer" value="no">
-                                          <label for="renforcer_vos_compétences_renforcer_no" class="mr-lg">No</label>
+                                        <input type="radio" id="renforcer_vos_compétences_no" name="renforcer_vos_compétences" value="no">
+                                          <label for="renforcer_vos_compétences_no" class="mr-lg">No</label>
                                     </div>
                                 </td>
 
@@ -130,11 +130,11 @@ include_once 'app/views/FRONT/layouts/header.php';
 
                             <tr class="table2">
                                 <td>Votre niveau d'implication dans la formation</td>
-                                <td> <input type="radio" id="niveau_implication_1" name="niveau_implication" value="1"></td>
-                                <td> <input type="radio" id="niveau_implication_2" name="niveau_implication" value="2"></td>
-                                <td> <input type="radio" id="niveau_implication_3" name="niveau_implication" value="3"></td>
-                                <td> <input type="radio" id="niveau_implication_4" name="niveau_implication" value="4"></td>
-                                <td> <input type="radio" id="niveau_implication_5" name="niveau_implication" value="5"></td>
+                                <td> <input type="radio" id="niveau_implication_1" name="niveau_implication" value="Médiocre"></td>
+                                <td> <input type="radio" id="niveau_implication_2" name="niveau_implication" value="Moyen"></td>
+                                <td> <input type="radio" id="niveau_implication_3" name="niveau_implication" value="Satisfaisant"></td>
+                                <td> <input type="radio" id="niveau_implication_4" name="niveau_implication" value="Très bon"></td>
+                                <td> <input type="radio" id="niveau_implication_5" name="niveau_implication" value="Excellent"></td>
 
                             </tr>
 
@@ -157,24 +157,24 @@ include_once 'app/views/FRONT/layouts/header.php';
                             <tbody>
                                 <tr class="table2 row-darkblue">
                                     <td>Communication des objectifs et du programme avant la formation</td>
-                                    <td> <input type="radio" id="Communication_des_objectifs_1" name="Communication_des_objectifs" value="1"></td>
-                                    <td> <input type="radio" id="Communication_des_objectifs_2" name="Communication_des_objectifs" value="2"></td>
-                                    <td> <input type="radio" id="Communication_des_objectifs_3" name="Communication_des_objectifs" value="3"></td>
-                                    <td> <input type="radio" id="Communication_des_objectifs_4" name="Communication_des_objectifs" value="4"></td>
+                                    <td> <input type="radio" id="Communication_des_objectifs_1" name="communication_objectifs" value="1"></td>
+                                    <td> <input type="radio" id="Communication_des_objectifs_2" name="communication_objectifs" value="2"></td>
+                                    <td> <input type="radio" id="Communication_des_objectifs_3" name="communication_objectifs" value="3"></td>
+                                    <td> <input type="radio" id="Communication_des_objectifs_4" name="communication_objectifs" value="4"></td>
                                 </tr>
                                 <tr class="table2 row-lightblue">
                                     <td>Organisation et déroulement de la formation</td>
-                                    <td> <input type="radio" id="Organisation_1" name="Organisation" value="1"></td>
-                                    <td> <input type="radio" id="Organisation_2" name="Organisation" value="2"></td>
-                                    <td> <input type="radio" id="Organisation_3" name="Organisation" value="3"></td>
-                                    <td> <input type="radio" id="Organisation_4" name="Organisation" value="4"></td>
+                                    <td> <input type="radio" id="Organisation_1" name="organisation_déroulement" value="1"></td>
+                                    <td> <input type="radio" id="Organisation_2" name="organisation_déroulement" value="2"></td>
+                                    <td> <input type="radio" id="Organisation_3" name="organisation_déroulement" value="3"></td>
+                                    <td> <input type="radio" id="Organisation_4" name="organisation_déroulement" value="4"></td>
                                 </tr>
                                 <tr class="table2 row-darkblue">
                                     <td>Progression de la formation (durée, rythme, alternance théorie/pratique) </td>
-                                    <td> <input type="radio" id="progression_1" name="progression" value="1"></td>
-                                    <td> <input type="radio" id="progression_2" name="progression" value="2"></td>
-                                    <td> <input type="radio" id="progression_3" name="progression" value="3"></td>
-                                    <td> <input type="radio" id="progression_4" name="progression" value="4"></td>
+                                    <td> <input type="radio" id="progression_1" name="progression_de_la_formation" value="1"></td>
+                                    <td> <input type="radio" id="progression_2" name="progression_de_la_formation" value="2"></td>
+                                    <td> <input type="radio" id="progression_3" name="progression_de_la_formation" value="3"></td>
+                                    <td> <input type="radio" id="progression_4" name="progression_de_la_formation" value="4"></td>
                                 </tr>
                                 <tr class="table2 row-lightblue">
                                     <td>Adéquation des moyens matériels mis à disposition</td>
@@ -229,11 +229,11 @@ include_once 'app/views/FRONT/layouts/header.php';
 
                             <tr class="table2">
                                 <td>Le formateur était un enseignant/démonstrateur efficace.</td>
-                                <td> <input type="radio" id="efficace_1" name="efficace" value="1"></td>
-                                <td> <input type="radio" id="efficace_2" name="efficace" value="2"></td>
-                                <td> <input type="radio" id="efficace_3" name="efficace" value="3"></td>
-                                <td> <input type="radio" id="efficace_4" name="efficace" value="4"></td>
-                                <td> <input type="radio" id="efficace_5" name="efficace" value="5"></td>
+                                <td> <input type="radio" id="efficace_1" name="formateur_efficace" value="1"></td>
+                                <td> <input type="radio" id="efficace_2" name="formateur_efficace" value="2"></td>
+                                <td> <input type="radio" id="efficace_3" name="formateur_efficace" value="3"></td>
+                                <td> <input type="radio" id="efficace_4" name="formateur_efficace" value="4"></td>
+                                <td> <input type="radio" id="efficace_5" name="formateur_efficace" value="5"></td>
 
                             </tr>
                             <tr class="table2">
