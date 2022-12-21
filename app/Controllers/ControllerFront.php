@@ -66,20 +66,28 @@ class ControllerFront
     }
     function sendQuestionnaire()
     {
-        // // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        // // extract($_POST);
-        // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        // // extract($_POST);
-        // print_r($_POST);
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        //extract($_POST);
+        $formKeys = array_keys($_POST);
+        $allFieldsMessage = false;
 
-       require 'app\views\FRONT\makepdf.php';
+        foreach( $formKeys as $key) {
+            if (empty($_POST[$key]) and $key != "elements_utiles" and  $key != "amélioreriez" and $key != "commentaires") {
+                $allFieldsMessage = true;
+            }
+        }
+
+        if($allFieldsMessage) {
+            showErrorsMofal(); 
+        }
+        extract($_POST);
+
+       // require 'app\views\FRONT\makepdf.php';
     }
 
     //contact form verification and message sending
     function sendMessage()
     {
-        echo 'Hello World';
-
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($_POST);
 

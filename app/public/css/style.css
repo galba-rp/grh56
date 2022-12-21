@@ -100,6 +100,7 @@ main {
     margin: auto;
 
 }
+
 .w-full {
     width: 100%;
 }
@@ -338,7 +339,6 @@ main {
 
 .log_in_field,
 .contact_field {
-    margin: 20px 10px;
     height: 2.5em;
     border-radius: 5px;
 }
@@ -390,9 +390,14 @@ main {
 }
 
 .form_error {
-    margin-bottom: 10px;
-    padding-left: 15px;
     color: red;
+    height: 2.5em;
+}
+
+.form_q {
+    border-style: solid;
+    padding: 2rem;
+    border-color: #01385c;
 }
 
 .show {
@@ -1014,6 +1019,7 @@ footer {
     justify-content: space-between;
     padding-right: 60%;
     padding-left: 10px;
+    font-weight: bold;
 }
 
 #radio_btns {
@@ -1319,7 +1325,7 @@ footer {
     -webkit-animation: animateopacity 1.4s;
 }
 
- /* Questionnaire page*/
+/* Questionnaire page*/
 #question_section {
     max-width: 1024px;
     margin-left: auto;
@@ -1327,7 +1333,7 @@ footer {
     margin-bottom: 5rem;
 }
 
- .dates {
+.dates {
     display: flex;
 }
 
@@ -1366,19 +1372,23 @@ footer {
 .mr-md {
     margin-right: 12px;
 }
-#question td{
-font-size: 1rem;
+
+#question td {
+    font-size: 1rem;
 }
 
-.table_b, .table_b th,.table_b td{
+.table_b,
+.table_b th,
+.table_b td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 4px;
 }
 
 .table2 td {
-   padding: 10px;
+    padding: 10px;
 }
+
 .table2 td:nth-child(n+2) {
     text-align: center;
 }
@@ -1404,22 +1414,23 @@ font-size: 1rem;
 }
 
 .title_question {
-font-size: 20px;
-font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .date {
     margin-right: 2rem;
-    justify-content:end;
+    justify-content: end;
 }
 
 .pr-sm {
-    padding-right: 8px;;
+    padding-right: 8px;
+    ;
 }
 
-input[type="date"] { 
+input[type="date"] {
     color: rgb(40, 88, 179);
-  }
+}
 
 @-webkit-keyframes animateopacity {
     0% {
@@ -1440,7 +1451,7 @@ input[type="date"] {
         opacity: 1;
     }
 }
-Mentions légales et données personnelles  Mentions légales et données personnelles 
+
 /* ---MEDIA QUERIES --*/
 @media (max-width: 1199px) {
 

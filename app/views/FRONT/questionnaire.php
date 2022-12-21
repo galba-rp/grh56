@@ -12,59 +12,63 @@ include_once 'app/views/FRONT/layouts/header.php';
 <main>
     <section class="normal_width main_container">
         <div id="question_section">
-            <h1 class="center">GRILLE D’ÉVALUATION À CHAUD </h1>
-            <form class="flexcolumn" id="submit" action="sendQuestion" method="post">
-                <div>
-                    <label for="student_number" class="label" id="first_line">Student number :</label>
+            <h1 class="center mb-5">GRILLE D’ÉVALUATION À CHAUD </h1>
+            <form class="flexcolumn form_q" id="submit" action="sendQuestion" method="post">
+                <div class="w-50">
+                <div class="d-flex justify-content-between mb-4">
+                    <label for="student_number" class="label">Student number :</label>
+                    <div>
                     <input type="text" name="student_number" class="contact_field" id="student_number" value=<?php if (isset($_POST['student_number'])) echo $_POST['student_number'] ?>>
                     <span class="form_error"><?= $errorsContact[0] ?></span>
+                    </div>
                 </div>
-                <div>
+                <div class="d-flex justify-content-between mb-4">
                     <label for="course_name" class="label">Intitulé de la formation :</label>
+                    <div>
                     <input type="text" name="course_name" class="contact_field" id="course_name" value=<?php if (isset($_POST['course_name'])) echo $_POST['course_name'] ?>>
                     <span class="form_error"><?= $errorsContact[1] ?></span>
+                    </div>
                 </div>
-                <div class="dates">
-                    <div>
+                <div class="d-flex justify-content-between mb-4">
                         <label for="course_start_date" class="label">Qui s’est déroulée du :</label>
+                    <div>    
                         <input type="date" name="course_start_date" class="contact_field" id="course_start_date" value=<?php if (isset($_POST['course_start_date'])) echo $_POST['course_start_date'] ?>>
                         <span class="form_error"><?= $errorsContact[2] ?></span>
-                    </div>
-                    <div>
                         <label for="course_end_date" class="label">au: </label>
                         <input type="date" name="course_end_date" class="contact_field" id="course_end_date" value=<?php if (isset($_POST['course_end_date'])) echo $_POST['course_end_date'] ?>>
                         <span class="form_error"><?= $errorsContact[2] ?></span>
                     </div>
                 </div>
-                <div>
+                <div class="d-flex justify-content-between mb-4">
                     <label for="teacher" class="label">Formateur  :</label>
+                    <div>
                     <input type="text" name="teacher" class="contact_field" id="teacher" value=<?php if (isset($_POST['teacher'])) echo $_POST['teacher'] ?>>
                     <span class="form_error"><?= $errorsContact[3] ?></span>
+                    </div>
                 </div>
-
+                </div>
 
                 <div class="mt-lg">
                     <h2>Pour quelle(s) raison(s) avez-vous suivi cette formation ? </h2>
                     <p>(Plusieurs réponses possibles)</p>
                     <div>
-                        <table id="question">
-                            <tr class='row-darkblue grid1'>
-                                <td class="mr-lg">
-                                    Formation prévue par votre entreprise
-                                </td>
-                                <td class="flex_row items-center">
-                                    <div class="flex_row">
-                                        <input type="radio" id="prévue_par_entreprise_oui" name="prévue_par_entreprise" value="Oui">
-                                          <label for="prévue_par_entreprise_oui" class="mr-lg">Oui</label>
-                                    </div>
-                                    <div class="flex_row">
-                                        <input type="radio" id="prévue_par_entreprise_no" name="prévue_par_entreprise" value="no">
-                                          <label for="prévue_par_entreprise_no" class="mr-lg">No</label>
-                                    </div>
-                                </td>
-
+                        <table id="question" class="w-full">
+                            <tr class='row-darkblue'>
+                                    <td class="mr-lg">
+                                        Formation prévue par votre entreprise
+                                    </td>
+                                    <td class="flex_row items-center">
+                                        <div class="flex_row">
+                                            <input type="radio" id="prévue_par_entreprise_oui" name="prévue_par_entreprise" value="Oui">
+                                              <label for="prévue_par_entreprise_oui" class="mr-lg">Oui</label>
+                                        </div>
+                                        <div class="flex_row">
+                                            <input type="radio" id="prévue_par_entreprise_no" name="prévue_par_entreprise" value="no">
+                                              <label for="prévue_par_entreprise_no" class="mr-lg">No</label>
+                                        </div>
+                                    </td>
                             </tr>
-                            <tr class='row-lightblue grid1'>
+                            <tr class='row-lightblue'>
                                 <td class="mr-lg">
                                     Utile pour renforcer vos compétences dans votre poste actuel
                                 </td>
@@ -80,7 +84,7 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 </td>
 
                             </tr>
-                            <tr class='row-darkblue grid1'>
+                            <tr class='row-darkblue'>
                                 <td class="mr-lg">
                                     Utile pour acquérir de nouvelles compétences
                                 </td>
@@ -96,7 +100,7 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 </td>
 
                             </tr>
-                            <tr class='row-lightblue grid1'>
+                            <tr class='row-lightblue'>
                                 <td class="mr-lg">
                                     Utile pour votre évolution professionnelle
                                 </td>
@@ -118,7 +122,7 @@ include_once 'app/views/FRONT/layouts/header.php';
 
                     <div class="mt-lg">
                         <h2>Niveau d'implication</h2>
-                        <table class="table_b">
+                        <table class="table_b w-full">
                             <tr class="table2">
                                 <th></th>
                                 <th>Médiocre</th>
@@ -135,7 +139,6 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 <td> <input type="radio" id="niveau_implication_3" name="niveau_implication" value="Satisfaisant"></td>
                                 <td> <input type="radio" id="niveau_implication_4" name="niveau_implication" value="Très bon"></td>
                                 <td> <input type="radio" id="niveau_implication_5" name="niveau_implication" value="Excellent"></td>
-
                             </tr>
 
                         </table>
@@ -149,9 +152,9 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 <tr class="table2">
                                     <th></th>
                                     <th>Insatisfaisant</th>
-                                    <th>Peu satisfaisant</th>
+                                    <th class="text-center">Peu satisfaisant</th>
                                     <th>Satisfaisant</th>
-                                    <th>Très satisfaisant</th>
+                                    <th class="text-center">Très satisfaisant</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -220,11 +223,11 @@ include_once 'app/views/FRONT/layouts/header.php';
                         <table class="table_b">
                             <tr class="table2">
                                 <th></th>
-                                <th>Pas du tout d'accord</th>
-                                <th>Pas d'accord</th>
-                                <th>Neutre</th>
-                                <th>D'accord</th>
-                                <th>Tout à fait d'accord</th>
+                                <th class="text-center">Pas du tout d'accord</th>
+                                <th class="text-center">Pas d'accord</th>
+                                <th class="text-center">Neutre</th>
+                                <th class="text-center">D'accord</th>
+                                <th class="text-center">Tout à fait d'accord</th>
                             </tr>
 
                             <tr class="table2">
@@ -292,9 +295,9 @@ include_once 'app/views/FRONT/layouts/header.php';
                                 <tr class="table2">
                                     <th></th>
                                     <th>Insatisfaisant</th>
-                                    <th>Peu satisfaisant</th>
+                                    <th class="text-center">Peu satisfaisant</th>
                                     <th>Satisfaisant</th>
-                                    <th>Très satisfaisant</th>
+                                    <th class="text-center">Très satisfaisant</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -326,20 +329,18 @@ include_once 'app/views/FRONT/layouts/header.php';
                                     <td> <input type="radio" id="Recommanderiez-vous_3" name="Recommanderiez-vous" value="3"></td>
                                     <td> <input type="radio" id="Recommanderiez-vous_4" name="Recommanderiez-vous" value="4"></td>
                                 </tr>
-
-                                <div class="mt-sm">
+                            </tbody>
+                        </table>
+                        <div class="mt-sm">
                                     <label for="commentaires" class="title_question">Commentaires:</label>
                                     <textarea id="commentaires" name="commentaires" rows="5" cols="100" class="mt-xs"></textarea>
                                 </div>
-                            </tbody>
-                        </table>
                     </div>
 
                     <div class="mt-lg flex_row date title_question">
                         <label for="date" class="pr-sm">Le: </label>
                         <input type="date" name="date" id="date">
                     </div>
-
                     <button type="submit" id="send_message" class="button">Envoyer</button>
             </form>
         </div>

@@ -42,16 +42,12 @@ try {
             $controllerUser->changePass();
         } elseif ($_GET['action'] == 'delete' && isset($_SESSION['name'])) {
             $controllerUser->deleteUser();
-        } elseif ($_GET['action'] == 'checkemail') {
-            $controllerUser->checkEmailExists();
         } elseif ($_GET['action'] == 'send') {
             $controllerFront->sendMessage();
         } elseif ($_GET['action'] == 'sendQuestion') {
             $controllerFront->sendQuestionnaire();
         } elseif ($_GET['action'] == 'admin' && isset($_SESSION['name']) && $_SESSION['status'] == 1) {
             $controllerUser->admin();
-        } elseif ($_GET['action'] == 'lost_password') {
-            $controllerUser->lostPassword();
         } elseif ($_GET['action'] == 'conditions') {
             $controllerFront->generalConditions();
         } elseif ($_GET['action'] == 'questionnaire') {
