@@ -49,7 +49,7 @@
                 <li class="<?php echo($show5)?>"><a href="student" class="menu_item" id="student"><?php echo(strtoupper($_SESSION['name'])) ?></a></li>
                 <li class="<?php echo($show6)?>"><a href="account" class="menu_item" id="account">MON COMPTE</a></li>
                 <li class="<?php echo($show3)?>" ><a href="logout" class="menu_item" id="logout">SE DECONNECTER</a></li>
-                <li class="<?php echo($show2)?>"><a class="menu_item" id="connect">SE CONNECTER</a></li>
+                <!-- <li class="<?php echo($show2)?>"><a class="menu_item" id="connect">SE CONNECTER</a></li> -->
             </ul>
         </nav>
     </div>

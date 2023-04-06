@@ -69,6 +69,13 @@ include_once 'layouts/header.php';
             </div>
             <?php endforeach ?>
         </div>
+        <div class="pagedivider"></div>
+        <div class="charts">
+        <canvas  id="evaluationChart" style="width:100%;max-width:500px; max-height:250px;margin-top: 100px;"></canvas>
+        <canvas  id="resultsChart" style="width:100%;max-width:500px; max-height:250px;margin-top: 100px;"></canvas>
+        <p class="center">Taux de retour des questionnaires : 90 %. Nombre de questionnaires envoyés : 20</p>
+        <p class="center">Taux d'obtention du niveau ciblé : 100 %</p>
+        </div>    
     </section>
 </main>
 <?php include 'layouts/footer.php' ?>
